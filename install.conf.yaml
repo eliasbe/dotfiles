@@ -6,5 +6,5 @@
     ~/.vimrc: vimrc
     ~/.zprofile: zprofile
     ~/.zshrc: zshrc
-
-
+    ~/.gitignore_global: gitignore_global
+    ~/.zprezto/runcoms/zpreztorc: zpreztorc
