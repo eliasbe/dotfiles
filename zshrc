@@ -1,3 +1,6 @@
+# Aliases
+source ~/.shell/aliases.sh
+
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 eval "$(fasd --init auto)"
 source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
