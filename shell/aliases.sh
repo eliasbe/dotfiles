@@ -1,5 +1,5 @@
 # ls aliases
-alias ll='ls -lah'
+alias ll='ls -l -A -h'
 alias la='ls -A'
 alias l='ls'
 
@@ -10,11 +10,11 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 
 # git aliases
-alias gs="git status"
-alias gc="git commit"
-alias gcm="gc -m"
+#alias gs="git status"
+#alias gc="git commit"
+#alias gcm="gc -m"
 alias g="git"
-alias gg="git log --all --graph --decorate --oneline"
+#alias gg="git log --all --graph --decorate --oneline"
 
 # Aliases to protect against overwriting
 alias cp='cp -i'

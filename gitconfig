@@ -1,3 +1,9 @@
+[alias]
+        st = status -sb
+        co = checkout
+	lg = log -p
+        gr = log --all --graph --decorate	
+
 [user]
 	name = eliasbe
 	email = eliaseinars@gmail.com
