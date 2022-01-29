@@ -67,9 +67,37 @@ set mouse+=a
 "Change the default mapping and the defailt command to invoke CtrlP (works?)
 let g:ctrlp_map = '<c-p>'
 
+
+" Spaces & Tabs
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set tabstop=4       " number of visual spaces per TAB
+set softtabstop=4   " number of spaces in tab when editing
+set shiftwidth=4    " Insert 4 spaces on a tab
+set expandtab       " tabs are spaces, mainly because of python
+
+
 " Adjust indentation
-set tabstop=8
-set expandtab
-set shiftwidth=4
-set autoindent
-set smartindent
+"syntax enable
+"set tabstop=8
+"set expandtab
+"set shiftwidth=4
+"set autoindent
+"set smartindent
+
+
+
+
+" =============================================================================
+"   PLUGINS
+" =============================================================================
+call plug#begin()
+
+" GUI enhancements
+Plug 'itchyny/lightline.vim'          " Better Status Bar
+Plug 'yggdroot/indentline'            " Shows indentation levels
+call plug#end()
+
+if !has('gui_running')
+    set t_Co=256
+endif
+set noshowmode

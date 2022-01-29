@@ -1,6 +1,6 @@
 # ls aliases
-alias ll='ls -l -A -h'
-alias la='ls -A'
+alias ll='ls -lh'
+alias la='ls -lha'
 alias l='ls'
 
 # navigation

@@ -29,3 +29,5 @@ unset __conda_setup
 
 setopt HIST_IGNORE_SPACE
 
+export TERM=xterm-256color
+

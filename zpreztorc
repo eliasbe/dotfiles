@@ -43,9 +43,9 @@ zstyle ':prezto:load' pmodule \
   'history-substring-search' \
   'homebrew' \
   'prompt' \
-  'git'
+  'git' \
   'prompt' \
-  'git' 
+  'tmux'
 
    
 
