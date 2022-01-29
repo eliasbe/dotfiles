@@ -2,17 +2,21 @@
         st = status -sb
         co = checkout
 	lg = log -p
+	cm = commit -m
+	c = commit
         gr = log --all --graph --decorate	
+	cm = commit -m
+	c = commit
 
 [user]
 	name = eliasbe
 	email = eliaseinars@gmail.com
 [credential]
 	helper = store
+[core]
+	excludesfile = /Users/k/.gitignore_global
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
-[core]
-	excludesfile = /Users/k/.gitignore_global
