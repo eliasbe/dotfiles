@@ -9,3 +9,4 @@
     ~/.gitignore_global: gitignore_global
     ~/.zprezto/runcoms/zpreztorc: zpreztorc
     ~/.shell: shell
+    ~/.tmux.conf: tmux.conf  

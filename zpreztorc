@@ -44,6 +44,10 @@ zstyle ':prezto:load' pmodule \
   'homebrew' \
   'prompt' \
   'git'
+  'prompt' \
+  'git' 
+
+   
 
 #
 # Autosuggestions
