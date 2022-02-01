@@ -93,8 +93,10 @@ set expandtab       " tabs are spaces, mainly because of python
 call plug#begin()
 
 " GUI enhancements
-Plug 'itchyny/lightline.vim'          " Better Status Bar
-Plug 'yggdroot/indentline'            " Shows indentation levels
+"Plug 'itchyny/lightline.vim'          " Better Status Bar
+"Plug 'yggdroot/indentline'            " Shows indentation levels
+Plug 'dense-analysis/ale' "linting
+Plug 'vim-syntastic/syntastic' "linting 
 call plug#end()
 
 if !has('gui_running')
