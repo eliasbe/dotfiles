@@ -90,16 +90,54 @@ set expandtab       " tabs are spaces, mainly because of python
 " =============================================================================
 "   PLUGINS
 " =============================================================================
-call plug#begin()
+"call plug#begin()
 
 " GUI enhancements
 "Plug 'itchyny/lightline.vim'          " Better Status Bar
 "Plug 'yggdroot/indentline'            " Shows indentation levels
-Plug 'dense-analysis/ale' "linting
-Plug 'vim-syntastic/syntastic' "linting 
-call plug#end()
+"Plug 'dense-analysis/ale' "linting
+"Plug 'vim-syntastic/syntastic' "linting 
+"Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+"Plug 'junegunn/fzf.vim'
+"Plug 'maximbaz/lightline-ale'          " Lightline + Ale
+"call plug#end()
 
 if !has('gui_running')
     set t_Co=256
 endif
 set noshowmode
+
+" Load all plugins now.
+" Plugins need to be added to runtimepath before helptags can be generated.
+packloadall
+" Load all of the helptags now, after plugins have been loaded.
+" All messages and errors will be ignored.
+"silent! 
+helptags ALL
+
+let g:lightline = {}
+
+let g:lightline.component_expand = {
+      \  'linter_checking': 'lightline#ale#checking',
+      \  'linter_infos': 'lightline#ale#infos',
+      \  'linter_warnings': 'lightline#ale#warnings',
+      \  'linter_errors': 'lightline#ale#errors',
+      \  'linter_ok': 'lightline#ale#ok',
+      \ }
+
+let g:lightline.component_type = {
+      \     'linter_checking': 'right',
+      \     'linter_infos': 'right',
+      \     'linter_warnings': 'warning',
+      \     'linter_errors': 'error',
+      \     'linter_ok': 'right',
+      \ }
+
+let g:lightline.active = { 'right': [[ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_infos', 'linter_ok' ]] }
+
+let g:lightline.active = {
+            \ 'right': [ [ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_infos', 'linter_ok' ],
+            \            [ 'lineinfo' ],
+	    \            [ 'percent' ],
+	    \            [ 'fileformat', 'fileencoding', 'filetype'] ] }
+
