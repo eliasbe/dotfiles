@@ -74,38 +74,26 @@ set tabstop=4       " number of visual spaces per TAB
 set softtabstop=4   " number of spaces in tab when editing
 set shiftwidth=4    " Insert 4 spaces on a tab
 set expandtab       " tabs are spaces, mainly because of python
-
-
-" Adjust indentation
-"syntax enable
-"set tabstop=8
-"set expandtab
-"set shiftwidth=4
-"set autoindent
-"set smartindent
-
-
+set autoindent
+set smartindent
 
 
 " =============================================================================
 "   PLUGINS
 " =============================================================================
-"call plug#begin()
 
-" GUI enhancements
-"Plug 'itchyny/lightline.vim'          " Better Status Bar
-"Plug 'yggdroot/indentline'            " Shows indentation levels
-"Plug 'dense-analysis/ale' "linting
-"Plug 'vim-syntastic/syntastic' "linting 
-"Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-"Plug 'junegunn/fzf.vim'
-"Plug 'maximbaz/lightline-ale'          " Lightline + Ale
-"call plug#end()
+" Hættur með Vim-plug, spurning um að íhuga minpac eða sambærilegt,
+"  aðalega til að uppfæra pakkana á kerfisbundin hátt
+" https://github.com/k-takata/minpac
+" vim-packager,pack,infect,vim-pck,vim8-pack,volt,autopac,plugpac.vim,minPlug
 
+
+# Fyrir litabirtingu
 if !has('gui_running')
     set t_Co=256
 endif
 set noshowmode
+" Vim mode birtir óþarfi
 
 " Load all plugins now.
 " Plugins need to be added to runtimepath before helptags can be generated.
