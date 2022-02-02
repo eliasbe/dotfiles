@@ -20,6 +20,9 @@ alias g="git"
 alias cp='cp -i'
 alias mv='mv -i'
 
+# Uppfæra 'allt'
+alias upp='~/.dotfiles/uppfaera.sh'
+
 # Update dotfiles
 dfu() {
     (

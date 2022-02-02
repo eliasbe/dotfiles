@@ -88,7 +88,7 @@ set smartindent
 " vim-packager,pack,infect,vim-pck,vim8-pack,volt,autopac,plugpac.vim,minPlug
 
 
-# Fyrir litabirtingu
+" Fyrir litabirtingu
 if !has('gui_running')
     set t_Co=256
 endif
@@ -129,3 +129,7 @@ let g:lightline.active = {
 	    \            [ 'percent' ],
 	    \            [ 'fileformat', 'fileencoding', 'filetype'] ] }
 
+
+let g:ale_linters = {'python': ['flake8', 'bandit', 'mypy']} " bandit, mypy, pylint, pyright
+let g:ale_fixers = {'*': [], 'python': ['black']} "isort (imports) remove_trailing_lines, trim_whitespace
+let g:ale_fix_on_save = 1
