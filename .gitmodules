@@ -2,3 +2,9 @@
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
 	ignore = dirty
+[submodule ".vim/pack/vendor/start/ale"]
+	path = .vim/pack/vendor/start/ale
+	url = https://github.com/dense-analysis/ale
+[submodule ".vim/pack/vendor/start/nerdtree"]
+	path = .vim/pack/vendor/start/nerdtree
+	url = https://github.com/preservim/nerdtree
