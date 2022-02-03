@@ -32,11 +32,11 @@ if # Upgdate all custom vim plugins
       git -C "$plugin" pull
     fi
   done
-#  for plugin in ~/.hammerspoon/*; do
-#    if [ -d "$plugin/.git" ]; then
-#      git -C "$plugin" pull
-#    fi
-#  done
+  for plugin in ~/Repos/*; do
+    if [ -d "$plugin/.git" ]; then
+      git -C "$plugin" pull
+    fi
+  done
 then
   printf '%s' "$GREEN"
   printf '%s\n' '   ________________   ____  __________  ____  _____'

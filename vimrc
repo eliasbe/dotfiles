@@ -130,6 +130,6 @@ let g:lightline.active = {
 	    \            [ 'fileformat', 'fileencoding', 'filetype'] ] }
 
 
-let g:ale_linters = {'python': ['flake8', 'bandit', 'mypy']} " bandit, mypy, pylint, pyright
-let g:ale_fixers = {'*': [], 'python': ['black']} "isort (imports) remove_trailing_lines, trim_whitespace
+let g:ale_linters = {'python': ['flake8']} " bandit, mypy, pylint, pyright
+let g:ale_fixers = {'*': [], 'python': ['black', 'isort']} "isort (imports) remove_trailing_lines, trim_whitespace
 let g:ale_fix_on_save = 1
