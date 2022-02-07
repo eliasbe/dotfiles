@@ -8,3 +8,6 @@
 [submodule ".vim/pack/vendor/start/nerdtree"]
 	path = .vim/pack/vendor/start/nerdtree
 	url = https://github.com/preservim/nerdtree
+[submodule "cmdtime"]
+	path = shell/plugins/cmdtime
+	url = https://github.com/tom-auger/cmdtime
