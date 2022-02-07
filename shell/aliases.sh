@@ -9,12 +9,13 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 
-# git aliases
+# git aliases || git module hjá prezto hefur tekið yfir
 #alias gs="git status"
 #alias gc="git commit"
 #alias gcm="gc -m"
-alias g="git"
-#alias gg="git log --all --graph --decorate --oneline"
+#alias g="git"
+#alias gg="git log --all --graph --decorate --oneline
+alias ggr="git log --all --graph --decorate --oneline"
 
 # Aliases to protect against overwriting
 alias cp='cp -i'

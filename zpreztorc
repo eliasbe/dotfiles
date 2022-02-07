@@ -17,6 +17,7 @@ zstyle ':prezto:*:*' color 'yes'
 
 # Add additional directories to load prezto modules from
 # zstyle ':prezto:load' pmodule-dirs $HOME/.zprezto-contrib
+zstyle ':prezto:load' pmodule-dirs ~/.dotfiles/shell/plugins
 
 # Allow module overrides when pmodule-dirs causes module name collisions
 # zstyle ':prezto:load' pmodule-allow-overrides 'yes'
@@ -38,14 +39,16 @@ zstyle ':prezto:load' pmodule \
   'spectrum' \
   'utility' \
   'osx' \
+  'git' \
   'completion' \
   'syntax-highlighting' \
   'history-substring-search' \
   'homebrew' \
   'prompt' \
-  'git' \
-  'prompt' \
-  'tmux'
+  'tmux' \
+  'clipboard' \
+  'cmdtime'
+  #'elapsed-time' \
 
    
 
@@ -179,13 +182,15 @@ zstyle ':prezto:module:prompt' theme 'sorin'
  zstyle ':prezto:module:syntax-highlighting' highlighters \
    'main' \
    'brackets' \
-   'pattern' \
-   'line' \
-   'cursor' \
-   'root'
+   'pattern' #\
+#   'line' \
+#   'cursor' \
+#   'root'
 #
 # Set syntax highlighting styles.
-# zstyle ':prezto:module:syntax-highlighting' styles \
+ zstyle ':prezto:module:syntax-highlighting' styles \
+    'single-hyphen-option' 'fg=red' \
+    'double-hyphen-option' 'fg=red' 
 #   'builtin' 'bg=blue' \
 #   'command' 'bg=blue' \
 #   'function' 'bg=blue'
