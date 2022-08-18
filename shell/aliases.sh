@@ -1,13 +1,22 @@
 # ls aliases
-alias ll='ls -lh'
-alias la='ls -lha'
-alias l='ls'
+#alias ll='ls -lh'
+#alias la='ls -lha'
+#alias l='ls'
+alias ls="exa"
+alias ll="exa -alh"
+alias lll="ll --sort=oldest"
+alias llll="ll --sort=newest"
+alias lls="ll --reverse --sort=size"
+alias llss="ll --sort=size"
+alias tree="exa --tree"
 
 # navigation
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
+
+alias t="clear" 
 
 # git aliases || git module hjá prezto hefur tekið yfir
 #alias gs="git status"
@@ -21,8 +30,15 @@ alias ggr="git log --all --graph --decorate --oneline"
 alias cp='cp -i'
 alias mv='mv -i'
 
+# Cat replacement
+alias cat="bat -pp"
+alias batp="bat -p"
+
 # Uppfæra 'allt'
 alias upp='~/.dotfiles/uppfaera.sh'
+
+alias ca='conda activate'
+alias cda='conda deactivate'
 
 # Update dotfiles
 dfu() {
@@ -59,3 +75,8 @@ up()
     cd "${cdir}"
 }
 
+# fh - repeat history
+fh()
+{
+  print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed -E 's/ *[0-9]*\*? *//' | sed -E 's/\\/\\\\/g')
+}
