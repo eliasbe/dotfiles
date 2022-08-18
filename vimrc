@@ -7,7 +7,7 @@
 " configuration option turns out not to be necessary for the file named
 " '~/.vimrc', because Vim automatically enters nocompatible mode if that file
 " is present. But we're including it here just in case this config file is
-" loaded some other way (e.g. saved as `foo`, and then Vim started with
+
 " `vim -u foo`).
 set nocompatible
 
@@ -64,9 +64,6 @@ set noerrorbells visualbell t_vb=
 set mouse+=a
 
 
-"Change the default mapping and the defailt command to invoke CtrlP (works?)
-let g:ctrlp_map = '<c-p>'
-
 
 " Spaces & Tabs
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -77,6 +74,13 @@ set expandtab       " tabs are spaces, mainly because of python
 set autoindent
 set smartindent
 
+imap jj <Esc>
+imap oeu <Esc>
+
+" Scroll [ctrlp og fzf skemma <C-u>, skil ekki ástæðuna. Workaround. Stopult]
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" nmap <C-h> <C-u>
+nmap <C-h> <ScrollWheelUp><ScrollWheelUp><ScrollWheelUp><ScrollWheelUp>
 
 " =============================================================================
 "   PLUGINS
@@ -92,6 +96,7 @@ set smartindent
 if !has('gui_running')
     set t_Co=256
 endif
+
 set noshowmode
 " Vim mode birtir óþarfi
 
@@ -102,6 +107,15 @@ packloadall
 " All messages and errors will be ignored.
 "silent! 
 helptags ALL
+
+" let g:ctrlp_prompt_mappings = {'PrtClear()': ['<c-ð>'],}
+nnoremap <C-t> :NERDTree<CR>
+
+nmap <C-p> :Files<CR>
+nmap <C-i> :Buffers<CR>
+
+"Change the default mapping and the defailt command to invoke CtrlP (works?)
+" let g:ctrlp_map = '<c-p>'
 
 let g:lightline = {}
 
