@@ -1,3 +1,6 @@
+# Startup profiling
+# zmodload zsh/zprof
+
 # Aliases
 source ~/.shell/aliases.sh
 
@@ -46,3 +49,8 @@ bindkey -a '^R' redo
 # Edit line
 bindkey -a '^V' edit-command-line
 
+PROMPT='[%D{%K:%M}] '$PROMPT
+# Startup profiling
+# zprof
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
