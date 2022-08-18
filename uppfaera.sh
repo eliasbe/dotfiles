@@ -77,3 +77,9 @@ printf "${BLUE}%s\n" "==========================================================
 
 printf "${GREEN}%s${BOLD}\n" "Updating base conda packages"
 conda update --all -y
+
+printf "${GREEN}%s${BOLD}\n" "Updating tldr"
+
+tldr --update
+
+printf "${GREEN}%s${BOLD}\n" "DONE"
