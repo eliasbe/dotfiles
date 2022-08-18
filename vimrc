@@ -135,7 +135,7 @@ let g:lightline.component_type = {
       \     'linter_ok': 'right',
       \ }
 
-let g:lightline.active = { 'right': [[ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_infos', 'linter_ok' ]] }
+" let g:lightline.active = { 'right': [[ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_infos', 'linter_ok' ]] }
 
 let g:lightline.active = {
             \ 'right': [ [ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_infos', 'linter_ok' ],
@@ -145,5 +145,8 @@ let g:lightline.active = {
 
 
 let g:ale_linters = {'python': ['flake8']} " bandit, mypy, pylint, pyright
-let g:ale_fixers = {'*': [], 'python': ['black', 'isort'], 'cpp': ['clang-format']} "isort (imports) remove_trailing_lines, trim_whitespace
+let g:ale_fixers = {'*': [], 'python': ['black', 'isort'], 'cpp': ['clang-format'], 'c': ['clang-format']} "isort (imports) remove_trailing_lines, trim_whitespace
 let g:ale_fix_on_save = 1
+
+au BufNewFile,BufRead Snakefile set syntax=snakemake
+au BufNewFile,BufRead *.snake set syntax=snakemake
