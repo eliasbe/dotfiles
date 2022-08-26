@@ -12,3 +12,4 @@
     ~/.tmux.conf: tmux.conf  
     ~/.vim: .vim
     ~/.condarc: condarc
+    ~/.tmux: tmux
