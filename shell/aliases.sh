@@ -3,11 +3,16 @@
 #alias la='ls -lha'
 #alias l='ls'
 alias ls="exa"
-alias ll="exa -alh"
+alias ll="exa -l"
+alias la="exa -la"
 alias lll="ll --sort=oldest"
 alias llll="ll --sort=newest"
 alias lls="ll --reverse --sort=size"
 alias llss="ll --sort=size"
+alias laa="la --sort=oldest"
+alias laaa="la --sort=newest"
+alias las="la --reverse --sort=size"
+alias lass="la --sort=size"
 alias tree="exa --tree"
 
 # navigation
