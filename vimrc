@@ -108,6 +108,8 @@ packloadall
 "silent! 
 helptags ALL
 
+packadd! sonokai
+
 " let g:ctrlp_prompt_mappings = {'PrtClear()': ['<c-ð>'],}
 nnoremap <C-t> :NERDTree<CR>
 
@@ -116,8 +118,11 @@ nmap <C-i> :Buffers<CR>
 
 "Change the default mapping and the defailt command to invoke CtrlP (works?)
 " let g:ctrlp_map = '<c-p>'
+let g:lightline = {
+      \ 'colorscheme': 'monokai_pro',
+      \ }
 
-let g:lightline = {}
+" let g:lightline = {}
 
 let g:lightline.component_expand = {
       \  'linter_checking': 'lightline#ale#checking',
@@ -150,3 +155,10 @@ let g:ale_fix_on_save = 1
 
 au BufNewFile,BufRead Snakefile set syntax=snakemake
 au BufNewFile,BufRead *.snake set syntax=snakemake
+
+set termguicolors
+" syntax enable
+" colorscheme monokai_pro
+" colorscheme solarized
+" colorscheme sonokai
+" colorscheme nord
