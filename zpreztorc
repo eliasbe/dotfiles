@@ -45,6 +45,7 @@ zstyle ':prezto:load' pmodule \
   'syntax-highlighting' \
   'history-substring-search' \
   'homebrew' \
+  'contrib-prompt' \
   'prompt' \
   'tmux' \
   'clipboard' \
@@ -129,7 +130,32 @@ zstyle ':prezto:module:gnu-utility' prefix 'g'
 # Set the prompt theme to load.
 # Setting it to 'random' loads a random theme.
 # Auto set to 'off' on dumb terminals.
-zstyle ':prezto:module:prompt' theme 'sorin'
+## zstyle ':prezto:module:prompt' theme 'sorin'
+zstyle ':prezto:module:prompt' theme 'spaceship'
+
+# autoload -U promptinit; promptinit
+#
+# Settings for prompt theme 'pure'
+PURE_CMD_MAX_EXEC_TIME=3600
+PURE_PROMPT_SYMBOL='❯❯❯'
+PURE_PROMPT_VICMD_SYMBOL='❮❮❮'
+
+# Settings for prompt theme 'spaceship'
+SPACESHIP_CHAR_SYMBOL='❯ '
+SPACESHIP_CHAR_COLOR_SUCCESS='magenta'
+SPACESHIP_TIME_SHOW='true'
+SPACESHIP_TIME_COLOR='white'
+SPACESHIP_PROMPT_PREFIXES_SHOW='false'
+SPACESHIP_TIME_FORMAT='[%D{%K:%M}]'
+SPACESHIP_DIR_TRUNC='5'
+SPACESHIP_GIT_SYMBOL=''
+SPACESHIP_VI_MODE_INSERT='❯'
+SPACESHIP_VI_MODE_COLOR='blue'
+SPACESHIP_VI_MODE_NORMAL='❮'
+SPACESHIP_BATTERY_SHOW='charged'
+SPACESHIP_BATTERY_THRESHOLD='20'
+SPACESHIP_DIR_TRUNC_REPO='false' #git slóð í heild
+SPACESHIP_DIR_LOCK_SYMBOL=''
 
 # Set the working directory prompt display length.
 # By default, it is set to 'short'. Set it to 'long' (without '~' expansion)

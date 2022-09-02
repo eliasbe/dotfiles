@@ -46,12 +46,16 @@ bindkey -a '^R' redo
 # Edit line
 bindkey -a '^V' edit-command-line
 
-PROMPT='[%D{%K:%M}] '$PROMPT
-# Startup profiling
-# zprof
+# PROMPT='[%D{%K:%M}] '$PROMPT
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Aliases
 source ~/.shell/aliases.sh
+
+eval spaceship_vi_mode_enable
+
+# Startup profiling
+# zprof
+
 
