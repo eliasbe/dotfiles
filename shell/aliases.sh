@@ -13,7 +13,10 @@ alias laa="la --sort=oldest"
 alias laaa="la --sort=newest"
 alias las="la --reverse --sort=size"
 alias lass="la --sort=size"
-alias tree="exa --tree"
+alias tre="exa --tree"
+alias tre1="exa --tree --level=1"
+alias tre2="exa --tree --level=2"
+alias tre3="exa --tree --level=3"
 
 # navigation
 alias ..="cd .."
