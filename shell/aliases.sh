@@ -14,9 +14,9 @@ alias laaa="la --sort=newest"
 alias las="la --reverse --sort=size"
 alias lass="la --sort=size"
 alias tre="exa --tree"
-alias tre1="exa --tree --level=1"
-alias tre2="exa --tree --level=2"
-alias tre3="exa --tree --level=3"
+alias tree="exa --tree --level=2"
+alias treee="exa --tree --level=3"
+alias treeee="exa --tree --level=4"
 
 # navigation
 alias ..="cd .."
@@ -39,7 +39,7 @@ alias cp='cp -i'
 alias mv='mv -i'
 
 # Cat replacement
-alias cat="bat -pp"
+alias bcat="bat -pp"
 alias batp="bat -p"
 
 # Uppfæra 'allt'
