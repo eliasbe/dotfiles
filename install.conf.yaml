@@ -13,3 +13,4 @@
     ~/.vim: .vim
     ~/.condarc: condarc
     ~/.tmux: tmux
+    # ~/.pythonrc: pythonrc

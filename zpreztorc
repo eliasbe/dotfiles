@@ -16,7 +16,7 @@ zstyle ':prezto:*:*' case-sensitive 'no'
 zstyle ':prezto:*:*' color 'yes'
 
 # Add additional directories to load prezto modules from
-# zstyle ':prezto:load' pmodule-dirs $HOME/.zprezto-contrib
+zstyle ':prezto:load' pmodule-dirs $HOME/.zprezto-contrib
 zstyle ':prezto:load' pmodule-dirs ~/.dotfiles/shell/plugins
 
 # Allow module overrides when pmodule-dirs causes module name collisions
@@ -131,7 +131,7 @@ zstyle ':prezto:module:gnu-utility' prefix 'g'
 # Setting it to 'random' loads a random theme.
 # Auto set to 'off' on dumb terminals.
 ## zstyle ':prezto:module:prompt' theme 'sorin'
-zstyle ':prezto:module:prompt' theme 'spaceship'
+zstyle ':prezto:module:prompt' theme 'pure'
 
 # autoload -U promptinit; promptinit
 #

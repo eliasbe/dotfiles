@@ -53,7 +53,7 @@ bindkey -a '^V' edit-command-line
 # Aliases
 source ~/.shell/aliases.sh
 
-eval spaceship_vi_mode_enable
+# eval spaceship_vi_mode_enable
 
 # Startup profiling
 # zprof
