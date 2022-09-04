@@ -23,3 +23,21 @@
 [submodule "tmux/plugins/tmux-sensible"]
 	path = tmux/plugins/tmux-sensible
 	url = https://github.com/tmux-plugins/tmux-sensible.git
+[submodule "tmux/plugins/tmux-battery"]
+	path = tmux/plugins/tmux-battery
+	url = https://github.com/tmux-plugins/tmux-battery.git
+[submodule "tmux/plugins/tmux-resurrect"]
+	path = tmux/plugins/tmux-resurrect
+	url = https://github.com/tmux-plugins/tmux-resurrect.git
+[submodule "tmux/plugins/tmux-continuum"]
+	path = tmux/plugins/tmux-continuum
+	url = https://github.com/tmux-plugins/tmux-continuum.git
+[submodule ".vim/pack/vendor/opt/ctrlp.vim"]
+	path = .vim/pack/vendor/opt/ctrlp.vim
+	url = https://github.com/kien/ctrlp.vim.git
+[submodule ".vim/pack/vendor/start/vim-polyglot"]
+	path = .vim/pack/vendor/start/vim-polyglot
+	url = https://github.com/sheerun/vim-polyglot.git
+[submodule ".vim/pack/vendor/start/vim-tmux-navigator"]
+	path = .vim/pack/vendor/start/vim-tmux-navigator
+	url = https://github.com/christoomey/vim-tmux-navigator.git
