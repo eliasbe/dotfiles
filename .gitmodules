@@ -47,3 +47,9 @@
 [submodule ".vim/pack/vendor/start/lightline.vim"]
 	path = .vim/pack/vendor/start/lightline.vim
 	url = https://github.com/itchyny/lightline.vim.git
+[submodule ".vim/pack/colors/opt/sonokai"]
+	path = .vim/pack/colors/opt/sonokai
+	url = https://github.com/sainnhe/sonokai.git
+[submodule ".vim/pack/colors/opt/vim-monokai-pro"]
+	path = .vim/pack/colors/opt/vim-monokai-pro
+	url = https://github.com/phanviet/vim-monokai-pro.git
