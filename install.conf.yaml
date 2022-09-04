@@ -13,4 +13,9 @@
     ~/.vim: .vim
     ~/.condarc: condarc
     ~/.tmux: tmux
+    ~/.config/karabiner: config/karabiner
+    ~/.config/broot: config/broot
+    ~/.config/btop: config/btop
+    ~/.config/htop: config/htop
+    ~/.config/kitty: config/kitty
     # ~/.pythonrc: pythonrc
