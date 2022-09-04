@@ -18,4 +18,7 @@
     ~/.config/btop: config/btop
     ~/.config/htop: config/htop
     ~/.config/kitty: config/kitty
+    ~/.bashrc: bashrc
+    ~/.fzf.zsh: fzf.zsh
+    ~/.fzf.bash: fzf.bash
     # ~/.pythonrc: pythonrc
