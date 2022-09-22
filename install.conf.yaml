@@ -10,7 +10,7 @@
     ~/.zprezto/runcoms/zpreztorc: zpreztorc
     ~/.shell: shell
     ~/.tmux.conf: tmux.conf  
-    ~/.vim: .vim
+    ~/.vim: vim
     ~/.condarc: condarc
     ~/.tmux: tmux
     ~/.config/karabiner: config/karabiner
