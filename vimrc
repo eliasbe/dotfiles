@@ -1,14 +1,13 @@
 " Comments in Vimscript start with a `"`.
 
+
 " If you open this file in Vim, it'll be syntax highlighted for you.
 
 " Vim is based on Vi. Setting `nocompatible` switches from the default
 " Vi-compatibility mode and enables useful Vim functionality. This
 " configuration option turns out not to be necessary for the file named
 " '~/.vimrc', because Vim automatically enters nocompatible mode if that file
-" is present. But we're including it here just in case this config file is
-
-" `vim -u foo`).
+" is present. But we're including it here just in case this config file is" `vim -u foo`).
 set nocompatible
 
 " Turn on syntax highlighting.
@@ -100,6 +99,11 @@ endif
 set noshowmode
 " Vim mode birtir óþarfi
 
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete
+
+let g:ale_completion_enabled = 1
+
 " Load all plugins now.
 " Plugins need to be added to runtimepath before helptags can be generated.
 packloadall
@@ -109,7 +113,14 @@ packloadall
 helptags ALL
 
 packadd! sonokai
+packadd! AutoComplPop
 
+set complete+=kspell
+set completeopt=menuone,noinsert
+" set shortmess+=c
+
+let g:pydiction_location = '~/.dotfiles/vim/after/ftplugin/pydiction/complete-dict'
+let g:pydiction_menu_height = 3
 " let g:ctrlp_prompt_mappings = {'PrtClear()': ['<c-ð>'],}
 nnoremap <C-t> :NERDTree<CR>
 
@@ -118,6 +129,8 @@ nmap <C-i> :Buffers<CR>
 
 "Change the default mapping and the defailt command to invoke CtrlP (works?)
 " let g:ctrlp_map = '<c-p>'
+
+
 let g:lightline = {
       \ 'colorscheme': 'monokai_pro',
       \ }
@@ -140,6 +153,7 @@ let g:lightline.component_type = {
       \     'linter_ok': 'right',
       \ }
 
+
 " let g:lightline.active = { 'right': [[ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_infos', 'linter_ok' ]] }
 
 let g:lightline.active = {
@@ -150,8 +164,9 @@ let g:lightline.active = {
 
 
 let g:ale_linters = {'python': ['flake8']} " bandit, mypy, pylint, pyright
-let g:ale_fixers = {'*': [], 'python': ['black', 'isort'], 'cpp': ['clang-format'], 'c': ['clang-format']} "isort (imports) remove_trailing_lines, trim_whitespace
+let g:ale_fixers = {'*': ['remove_trailing_lines', 'trim_whitespace'], 'python': ['black', 'isort'], 'cpp': ['clang-format'], 'c': ['clang-format']} "isort (imports) remove_trailing_lines, trim_whitespace
 let g:ale_fix_on_save = 1
+let g:ale_completion_enabled = 1
 
 au BufNewFile,BufRead Snakefile set syntax=snakemake
 au BufNewFile,BufRead *.snake set syntax=snakemake
