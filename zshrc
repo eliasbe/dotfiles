@@ -55,7 +55,12 @@ source ~/.shell/aliases.sh
 
 # eval spaceship_vi_mode_enable
 
+source /Users/k/.config/broot/launcher/bash/br
+
+### Environment variables
+export EDITOR=vim
+export PAGER=less
+
 # Startup profiling
 # zprof
-
 
