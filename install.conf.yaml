@@ -13,7 +13,7 @@
     ~/.vim: vim
     ~/.condarc: condarc
     ~/.tmux: tmux
-    ~/.config/broot: config/broot
+    ~/.config/broot/conf.hjson: config/broot/conf.hjson
     ~/.config/btop: config/btop
     ~/.config/htop: config/htop
     ~/.bashrc: bashrc

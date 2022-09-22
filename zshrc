@@ -65,3 +65,5 @@ export PAGER=less
 
 # Startup profiling
 # zprof
+
+source /users/home/ebe19/.config/broot/launcher/bash/br
