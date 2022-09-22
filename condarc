@@ -1,2 +1,5 @@
-channels: [conda-forge]
-auto_activate_base: false
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+env_prompt: '({name}) '
