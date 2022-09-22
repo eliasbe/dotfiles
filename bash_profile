@@ -14,3 +14,5 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+
+source /Users/k/.config/broot/launcher/bash/br
