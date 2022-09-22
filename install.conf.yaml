@@ -9,15 +9,13 @@
     ~/.gitignore_global: gitignore_global
     ~/.zprezto/runcoms/zpreztorc: zpreztorc
     ~/.shell: shell
-    ~/.tmux.conf: tmux.conf  
+    ~/.tmux.conf: tmux.conf
     ~/.vim: vim
     ~/.condarc: condarc
     ~/.tmux: tmux
-    ~/.config/karabiner: config/karabiner
     ~/.config/broot: config/broot
     ~/.config/btop: config/btop
     ~/.config/htop: config/htop
-    ~/.config/kitty: config/kitty
     ~/.bashrc: bashrc
     ~/.fzf.zsh: fzf.zsh
     ~/.fzf.bash: fzf.bash
