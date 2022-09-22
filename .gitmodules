@@ -54,7 +54,7 @@
 	path = .vim/pack/colors/opt/vim-monokai-pro
 	url = https://github.com/phanviet/vim-monokai-pro.git
 [submodule "vim/pack/vendor/pydiction"]
-	path = .vim/pack/vendor/pydiction
+	path = vim/pack/vendor/pydiction
 	url = https://github.com/rkulla/pydiction.git
 [submodule "shell/plugins/zsh-interactive-cd"]
 	path = shell/plugins/zsh-interactive-cd
