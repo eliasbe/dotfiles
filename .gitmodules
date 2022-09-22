@@ -2,10 +2,10 @@
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
 	ignore = dirty
-[submodule ".vim/pack/vendor/start/ale"]
+[submodule "vim/pack/vendor/start/ale"]
 	path = .vim/pack/vendor/start/ale
 	url = https://github.com/dense-analysis/ale
-[submodule ".vim/pack/vendor/start/nerdtree"]
+[submodule "vim/pack/vendor/start/nerdtree"]
 	path = .vim/pack/vendor/start/nerdtree
 	url = https://github.com/preservim/nerdtree
 [submodule "cmdtime"]
@@ -32,24 +32,48 @@
 [submodule "tmux/plugins/tmux-continuum"]
 	path = tmux/plugins/tmux-continuum
 	url = https://github.com/tmux-plugins/tmux-continuum.git
-[submodule ".vim/pack/vendor/opt/ctrlp.vim"]
+[submodule "vim/pack/vendor/opt/ctrlp.vim"]
 	path = .vim/pack/vendor/opt/ctrlp.vim
 	url = https://github.com/kien/ctrlp.vim.git
-[submodule ".vim/pack/vendor/start/vim-polyglot"]
+[submodule "vim/pack/vendor/start/vim-polyglot"]
 	path = .vim/pack/vendor/start/vim-polyglot
 	url = https://github.com/sheerun/vim-polyglot.git
-[submodule ".vim/pack/vendor/start/vim-tmux-navigator"]
+[submodule "vim/pack/vendor/start/vim-tmux-navigator"]
 	path = .vim/pack/vendor/start/vim-tmux-navigator
 	url = https://github.com/christoomey/vim-tmux-navigator.git
-[submodule ".vim/pack/vendor/start/.vim/pack/vendor/start/lightline.vim"]
-	path = .vim/pack/vendor/start/.vim/pack/vendor/start/lightline.vim
-	url = https://github.com/itchyny/lightline.vim.git
-[submodule ".vim/pack/vendor/start/lightline.vim"]
+[submodule "vim/pack/vendor/start/lightline.vim"]
 	path = .vim/pack/vendor/start/lightline.vim
 	url = https://github.com/itchyny/lightline.vim.git
-[submodule ".vim/pack/colors/opt/sonokai"]
+[submodule "vim/pack/vendor/start/lightline.vim"]
+	path = .vim/pack/vendor/start/lightline.vim
+	url = https://github.com/itchyny/lightline.vim.git
+[submodule "vim/pack/colors/opt/sonokai"]
 	path = .vim/pack/colors/opt/sonokai
 	url = https://github.com/sainnhe/sonokai.git
-[submodule ".vim/pack/colors/opt/vim-monokai-pro"]
+[submodule "vim/pack/colors/opt/vim-monokai-pro"]
 	path = .vim/pack/colors/opt/vim-monokai-pro
 	url = https://github.com/phanviet/vim-monokai-pro.git
+[submodule "vim/pack/vendor/pydiction"]
+	path = .vim/pack/vendor/pydiction
+	url = https://github.com/rkulla/pydiction.git
+[submodule "shell/plugins/zsh-interactive-cd"]
+	path = shell/plugins/zsh-interactive-cd
+	url = https://github.com/changyuheng/zsh-interactive-cd.git
+[submodule "vim/pack/vendor/opt/denops.vim"]
+	path = .vim/pack/vendor/opt/denops.vim
+	url = https://github.com/vim-denops/denops.vim.git
+[submodule "vim/pack/vendor/opt/denops-helloworld.vim"]
+	path = .vim/pack/vendor/opt/denops-helloworld.vim
+	url = https://github.com/vim-denops/denops-helloworld.vim.git
+[submodule "vim/pack/vendor/opt/ddc.vim"]
+	path = .vim/pack/vendor/opt/ddc.vim
+	url = https://github.com/Shougo/ddc.vim.git
+[submodule "vim/pack/vendor/opt/ddc-around"]
+	path = .vim/pack/vendor/opt/ddc-around
+	url = https://github.com/Shougo/ddc-around.git
+[submodule "vim/pack/vendor/opt/AutoComplPop"]
+	path = .vim/pack/vendor/opt/AutoComplPop
+	url = https://github.com/vim-scripts/AutoComplPop.git
+[submodule "vim/after/ftplugin/pydiction"]
+	path = .vim/after/ftplugin/pydiction
+	url = https://github.com/rkulla/pydiction.git
