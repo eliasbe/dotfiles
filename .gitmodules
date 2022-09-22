@@ -47,9 +47,6 @@
 [submodule "vim/pack/colors/opt/vim-monokai-pro"]
 	path = vim/pack/colors/opt/vim-monokai-pro
 	url = https://github.com/phanviet/vim-monokai-pro.git
-[submodule "vim/pack/vendor/pydiction"]
-	path = vim/pack/vendor/pydiction
-	url = https://github.com/rkulla/pydiction.git
 [submodule "shell/plugins/zsh-interactive-cd"]
 	path = shell/plugins/zsh-interactive-cd
 	url = https://github.com/changyuheng/zsh-interactive-cd.git
@@ -74,3 +71,6 @@
 [submodule "vim/pack/vendor/start/lightline.vim"]
 	path = vim/pack/vendor/start/lightline.vim
 	url = https://github.com/itchyny/lightline.vim.git
+[submodule "shell/fzf-git.sh"]
+	path = shell/fzf-git.sh
+	url = https://github.com/junegunn/fzf-git.sh.git

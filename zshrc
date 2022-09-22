@@ -53,6 +53,8 @@ bindkey -a '^V' edit-command-line
 # Aliases
 source ~/.shell/aliases.sh
 
+# Git fzf
+source ~/.shell/fzf-git.sh/fzf-git.sh
 # eval spaceship_vi_mode_enable
 
 source /Users/k/.config/broot/launcher/bash/br
@@ -63,4 +65,3 @@ export PAGER=less
 
 # Startup profiling
 # zprof
-
