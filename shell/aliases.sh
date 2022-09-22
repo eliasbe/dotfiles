@@ -3,12 +3,13 @@
 #alias la='ls -lha'
 #alias l='ls'
 alias ls="exa"
-alias ll="exa -l"
+alias l="exa -l --git"
 alias la="exa -la"
-alias lll="ll --sort=oldest"
-alias llll="ll --sort=newest"
-alias lls="ll --reverse --sort=size"
-alias llss="ll --sort=size"
+alias ll="l --sort=oldest"
+alias lll="l --sort=newest"
+alias llll="l --reverse"
+alias lls="l --reverse --sort=size"
+alias llss="l --sort=size"
 alias laa="la --sort=oldest"
 alias laaa="la --sort=newest"
 alias las="la --reverse --sort=size"
@@ -25,14 +26,19 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 
 alias t="clear" 
+alias et="!!"
 
-# git aliases || git module hjá prezto hefur tekið yfir
+alias v="vim"
+
+# git aliases || git module hjá prezto hefur tekið yfir og ákveðin aliös í gitconfig
 #alias gs="git status"
 #alias gc="git commit"
 #alias gcm="gc -m"
 #alias g="git"
 #alias gg="git log --all --graph --decorate --oneline
 alias ggr="git log --all --graph --decorate --oneline"
+alias gcob='g checkout $(gb | fzf --height 30% --reverse)'
+alias gcor='g checkout --track $(gb -remote | fzf)'
 
 # Aliases to protect against overwriting
 alias cp='cp -i'
