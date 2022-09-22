@@ -54,6 +54,8 @@ alias upp='~/.dotfiles/uppfaera.sh'
 alias ca='conda activate'
 alias cda='conda deactivate'
 
+alias eljaenv='conda activate /hpcdata/Mimir/ebe19/elja_env'
+
 # Update dotfiles
 dfu() {
     (
