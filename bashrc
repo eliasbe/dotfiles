@@ -38,6 +38,6 @@ source /users/home/ebe19/.config/broot/launcher/bash/br
 
 source ~/.shell/aliases.sh
 
-source /Users/k/.config/broot/launcher/bash/br
+source /users/home/ebe19/.config/broot/launcher/bash/br
 
 eljaenv
