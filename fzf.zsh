@@ -5,7 +5,8 @@ if [[ ! "$PATH" == */opt/homebrew/opt/fzf/bin* ]]; then
 fi
 
 #
-source /Users/k/.dotfiles/shell/plugins/zsh-interactive-cd/zsh-interactive-cd.plugin.zsh
+# source /Users/k/.dotfiles/shell/plugins/zsh-interactive-cd/zsh-interactive-cd.plugin.zsh
+source "/users/home/ebe19/.shell/completion.zsh"
 
 # Auto-completion
 # ---------------
@@ -13,10 +14,11 @@ source /Users/k/.dotfiles/shell/plugins/zsh-interactive-cd/zsh-interactive-cd.pl
 
 # Key bindings
 # ------------
-source "/opt/homebrew/opt/fzf/shell/key-bindings.zsh"
+#source "/opt/homebrew/opt/fzf/shell/key-bindings.zsh"
+source "/users/home/ebe19/.shell/key-bindings.zsh"
 
 export FZF_COMPLETION_TRIGGER=',,'
-export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow'
+# export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow'
 #export FZF_DEFAULT_OPTS='--bind "ctrl-y:execute-silent(printf {} | cut -f 2- | wl-copy --trim-newline)"'
 
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"

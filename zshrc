@@ -1,9 +1,9 @@
 # Startup profiling
 # zmodload zsh/zprof
 
-source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-eval "$(fasd --init auto)"
+# source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+eval "$(fasd --init auto)"
 
 export PATH=/Users/k/bin:$PATH
 
@@ -13,14 +13,14 @@ bindkey -v
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/opt/homebrew/Caskroom/miniforge/base/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('/hpcdata/Mimir/ebe19/elja_env/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/opt/homebrew/Caskroom/miniforge/base/etc/profile.d/conda.sh" ]; then
-        . "/opt/homebrew/Caskroom/miniforge/base/etc/profile.d/conda.sh"
+    if [ -f "/hpcdata/Mimir/ebe19/elja_env/etc/profile.d/conda.sh" ]; then
+        . "/hpcdata/Mimir/ebe19/elja_env/etc/profile.d/conda.sh"
     else
-        export PATH="/opt/homebrew/Caskroom/miniforge/base/bin:$PATH"
+        export PATH="/hpcdata/Mimir/ebe19/elja_env/bin:$PATH"
     fi
 fi
 unset __conda_setup
@@ -57,7 +57,7 @@ source ~/.shell/aliases.sh
 source ~/.shell/fzf-git.sh/fzf-git.sh
 # eval spaceship_vi_mode_enable
 
-source /Users/k/.config/broot/launcher/bash/br
+# source /Users/ebe19/broot/launcher/zsh/br
 
 ### Environment variables
 export EDITOR=vim
@@ -66,4 +66,4 @@ export PAGER=less
 # Startup profiling
 # zprof
 
-source /users/home/ebe19/.config/broot/launcher/bash/br
+#   source /users/home/ebe19/.config/broot/launcher/bash/br
