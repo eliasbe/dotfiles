@@ -3,3 +3,4 @@ channels:
   - bioconda
   - defaults
 env_prompt: '({name}) '
+channel_priority: strict

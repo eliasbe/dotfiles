@@ -4,6 +4,8 @@
 # # The original version is saved in .zprofile.pysave
 # PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
 # export PATH
+PATH="/users/home/ebe19/.zprezto/modules:${PATH}"
+export PATH
 #
 # Executes commands at login pre-zshrc.
 #
@@ -37,9 +39,9 @@ fi
 # Language
 #
 
-if [[ -z "$LANG" ]]; then
-  export LANG='en_US.UTF-8'
-fi
+# if [[ -z "$LANG" ]]; then
+#   export LANG='en_US.UTF-8'
+# fi
 
 #
 # Paths
@@ -58,6 +60,7 @@ path=(
   $HOME/{,s}bin(N)
   /opt/{homebrew,local}/{,s}bin(N)
   /usr/local/{,s}bin(N)
+  /users/home/ebe19/.zprezto/modules
   $path
 )
 

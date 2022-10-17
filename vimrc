@@ -176,4 +176,5 @@ set termguicolors
 " colorscheme monokai_pro
 " colorscheme solarized
 " colorscheme sonokai
-colorscheme nord
+" colorscheme nord
+colorscheme desert

@@ -1,3 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =1
-let g:netrw_dirhist_1='/Users/k/.zprezto'
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/users/home/ebe19/dotfiles/tmux'
+let g:netrw_dirhist_2='/users/home/ebe19/.zprezto'
+let g:netrw_dirhist_3='/hpcdata/Mimir/ebe19/rnaseq/.git'
