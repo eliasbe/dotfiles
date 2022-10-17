@@ -77,3 +77,18 @@
 [submodule "tmux/plugins/tpm"]
 	path = tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm.git
+[submodule "vim/pack/vendor/opt/syntastic"]
+	path = vim/pack/vendor/opt/syntastic
+	url = https://github.com/vim-syntastic/syntastic.git
+[submodule "vim/pack/vendor/start/ctrlp.vim"]
+	path = vim/pack/vendor/start/ctrlp.vim
+	url = https://github.com/ctrlpvim/ctrlp.vim.git
+[submodule "vim/pack/vendor/start/fzf"]
+	path = vim/pack/vendor/start/fzf
+	url = https://github.com/junegunn/fzf.git
+[submodule "vim/pack/vendor/start/fzf.vim"]
+	path = vim/pack/vendor/start/fzf.vim
+	url = https://github.com/junegunn/fzf.vim.git
+[submodule "vim/pack/vendor/start/lightline-ale"]
+	path = vim/pack/vendor/start/lightline-ale
+	url = https://github.com/maximbaz/lightline-ale.git
