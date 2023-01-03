@@ -4,7 +4,7 @@
 #alias l='ls'
 alias ls="exa"
 alias l="exa -l --git"
-alias la="exa -la"
+alias la="l -a"
 alias ll="l --sort=oldest"
 alias lll="l --sort=newest"
 alias llll="l --reverse"
@@ -25,7 +25,7 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 
-alias t="clear" 
+alias t="clear"
 alias et="!!"
 
 alias v="vim"
