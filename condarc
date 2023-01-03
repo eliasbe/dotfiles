@@ -1,3 +1,10 @@
 channels: [conda-forge]
 auto_activate_base: false
 channel_priority: strict
+
+envs_dirs:
+  - /data/scratch/petur/condaenvs/
+pkgs_dirs:
+  - /data/conda_pkg_cache/
+create_default_packages:
+  - python=3.8
