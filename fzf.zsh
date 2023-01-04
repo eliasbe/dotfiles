@@ -1,19 +1,19 @@
-# Setup fzf
-# ---------
-if [[ ! "$PATH" == */opt/homebrew/opt/fzf/bin* ]]; then
-  PATH="${PATH:+${PATH}:}/opt/homebrew/opt/fzf/bin"
-fi
-
-#
-source /Users/k/.dotfiles/shell/plugins/zsh-interactive-cd/zsh-interactive-cd.plugin.zsh
-
-# Auto-completion
-# ---------------
-[[ $- == *i* ]] && source "/opt/homebrew/opt/fzf/shell/completion.zsh" 2> /dev/null
-
-# Key bindings
-# ------------
-source "/opt/homebrew/opt/fzf/shell/key-bindings.zsh"
+# # Setup fzf
+# # ---------
+# if [[ ! "$PATH" == */opt/homebrew/opt/fzf/bin* ]]; then
+#   PATH="${PATH:+${PATH}:}/opt/homebrew/opt/fzf/bin"
+# fi
+# 
+# #
+# source /Users/k/.dotfiles/shell/plugins/zsh-interactive-cd/zsh-interactive-cd.plugin.zsh
+# 
+# # Auto-completion
+# # ---------------
+# [[ $- == *i* ]] && source "/opt/homebrew/opt/fzf/shell/completion.zsh" 2> /dev/null
+# 
+# # Key bindings
+# # ------------
+# source "/opt/homebrew/opt/fzf/shell/key-bindings.zsh"
 
 export FZF_COMPLETION_TRIGGER=',,'
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow'

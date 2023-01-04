@@ -11,22 +11,6 @@
 bindkey -v
 
 
-# # >>> conda initialize >>>
-# # !! Contents within this block are managed by 'conda init' !!
-# __conda_setup="$('/opt/homebrew/Caskroom/miniforge/base/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-# if [ $? -eq 0 ]; then
-#     eval "$__conda_setup"
-# else
-#     if [ -f "/opt/homebrew/Caskroom/miniforge/base/etc/profile.d/conda.sh" ]; then
-#         . "/opt/homebrew/Caskroom/miniforge/base/etc/profile.d/conda.sh"
-#     else
-#         export PATH="/opt/homebrew/Caskroom/miniforge/base/bin:$PATH"
-#     fi
-# fi
-# unset __conda_setup
-# # <<< conda initialize <<<
-
-
 setopt HIST_IGNORE_SPACE
 
 export TERM=xterm-256color
@@ -54,10 +38,10 @@ bindkey -a '^V' edit-command-line
 source ~/.shell/aliases.sh
 
 # Git fzf
-source ~/.shell/fzf-git.sh/fzf-git.sh
+# source ~/.shell/fzf-git.sh/fzf-git.sh
 # eval spaceship_vi_mode_enable
 
-source /Users/k/.config/broot/launcher/bash/br
+## source /Users/k/.config/broot/launcher/bash/br
 
 ### Environment variables
 export EDITOR=vim
@@ -65,3 +49,23 @@ export PAGER=less
 
 # Startup profiling
 # zprof
+
+# Miðeind/Ada specific
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/data/scratch/elias/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/data/scratch/elias/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/data/scratch/elias/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/data/scratch/elias/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+export CUDA_VISIBLE_DEVICES="$CUDA_VISIBLE_DEVICES"
+
+ca misc
