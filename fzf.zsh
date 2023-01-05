@@ -1,19 +1,16 @@
-# # Setup fzf
-# # ---------
-# if [[ ! "$PATH" == */opt/homebrew/opt/fzf/bin* ]]; then
-#   PATH="${PATH:+${PATH}:}/opt/homebrew/opt/fzf/bin"
-# fi
-# 
-# #
-# source /Users/k/.dotfiles/shell/plugins/zsh-interactive-cd/zsh-interactive-cd.plugin.zsh
-# 
-# # Auto-completion
-# # ---------------
-# [[ $- == *i* ]] && source "/opt/homebrew/opt/fzf/shell/completion.zsh" 2> /dev/null
-# 
-# # Key bindings
-# # ------------
-# source "/opt/homebrew/opt/fzf/shell/key-bindings.zsh"
+# Setup fzf
+# ---------
+if [[ ! "$PATH" == */home/elias/bin* ]]; then
+  PATH="${PATH:+${PATH}:}/home/elias/bin"
+fi
+
+# Auto-completion
+# ---------------
+[[ $- == *i* ]] && source "/home/elias/.shell/fzf/completion.zsh" 2> /dev/null
+
+# Key bindings
+# ------------
+source "/home/elias/.shell/fzf/key-bindings.zsh"
 
 export FZF_COMPLETION_TRIGGER=',,'
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow'
@@ -98,7 +95,7 @@ alg() {
 }
 
 
-### Git 
+### Git
 # fshow - git commit browser
 ggrs() {
   git log --graph --color=always \
@@ -126,3 +123,4 @@ gbrs() {
         --ansi --preview="git --no-pager log -150 --pretty=format:%s '..{2}'") || return
   git checkout $(awk '{print $2}' <<<"$target" )
 }
+

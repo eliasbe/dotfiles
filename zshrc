@@ -2,13 +2,13 @@
 # zmodload zsh/zprof
 
 # source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-# eval "$(fasd --init auto)"
 # 
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 # 
+eval "$(fasd --init auto)"
 # export PATH=/Users/k/bin:$PATH
 
 # Use vi keybindings
@@ -72,4 +72,4 @@ unset __conda_setup
 
 export CUDA_VISIBLE_DEVICES="$CUDA_VISIBLE_DEVICES"
 
-ca misc
+ca ada
