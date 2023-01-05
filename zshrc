@@ -3,7 +3,11 @@
 
 # source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 # eval "$(fasd --init auto)"
-# source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+# 
+# Source Prezto.
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
 # 
 # export PATH=/Users/k/bin:$PATH
 

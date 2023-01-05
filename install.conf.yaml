@@ -7,7 +7,8 @@
     # ~/.zprofile: zprofile
     ~/.zshrc: zshrc
     # ~/.gitignore_global: gitignore_global
-    # ~/.zprezto/runcoms/zpreztorc: zpreztorc
+    ~/.zprezto/runcoms/zpreztorc: zpreztorc
+    ~/.zpreztorc: zpreztorc
     ~/.shell: shell
     # ~/.tmux.conf: tmux.conf  
     # ~/.vim: vim
