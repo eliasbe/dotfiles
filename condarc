@@ -8,3 +8,4 @@ pkgs_dirs:
   - /data/conda_pkg_cache/
 create_default_packages:
   - python=3.8
+auto_stack: 1
