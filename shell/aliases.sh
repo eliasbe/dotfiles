@@ -2,7 +2,7 @@
 #alias ll='ls -lh'
 #alias la='ls -lha'
 #alias l='ls'
-alias ls="exa"
+# alias ls="exa"
 alias l="exa -l --git"
 alias la="l -a"
 alias ll="l --sort=oldest"
