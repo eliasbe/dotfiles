@@ -10,7 +10,7 @@
     ~/.zprezto/runcoms/zpreztorc: zpreztorc
     ~/.zpreztorc: zpreztorc
     ~/.shell: shell
-    # ~/.tmux.conf: tmux.conf  
+    ~/.tmux.conf: tmux.conf  
     # ~/.vim: vim
     ~/.condarc: condarc
     # ~/.tmux: tmux
