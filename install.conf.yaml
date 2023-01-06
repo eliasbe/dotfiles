@@ -9,7 +9,7 @@
     ~/.gitignore_global: gitignore_global
     ~/.zprezto/runcoms/zpreztorc: zpreztorc
     ~/.shell: shell
-    ~/.tmux.conf: tmux.conf  
+    ~/.tmux.conf: tmux.conf
     ~/.vim: vim
     ~/.condarc: condarc
     ~/.tmux: tmux
@@ -22,3 +22,6 @@
     ~/.fzf.zsh: fzf.zsh
     ~/.fzf.bash: fzf.bash
     # ~/.pythonrc: pythonrc
+
+- shell:
+    - [git submodule update --init --recursive, Installing submodules]
