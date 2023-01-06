@@ -62,15 +62,9 @@
 [submodule "vim/pack/vendor/opt/ddc-around"]
 	path = vim/pack/vendor/opt/ddc-around
 	url = https://github.com/Shougo/ddc-around.git
-[submodule "vim/pack/vendor/opt/AutoComplPop"]
-	path = vim/pack/vendor/opt/AutoComplPop
-	url = https://github.com/vim-scripts/AutoComplPop.git
 [submodule "vim/after/ftplugin/pydiction"]
 	path = vim/after/ftplugin/pydiction
 	url = https://github.com/rkulla/pydiction.git
-[submodule "vim/pack/vendor/start/lightline.vim"]
-	path = vim/pack/vendor/start/lightline.vim
-	url = https://github.com/itchyny/lightline.vim.git
 [submodule "shell/fzf-git.sh"]
 	path = shell/fzf-git.sh
 	url = https://github.com/junegunn/fzf-git.sh.git
@@ -92,3 +86,11 @@
 [submodule "vim/pack/vendor/start/lightline-ale"]
 	path = vim/pack/vendor/start/lightline-ale
 	url = https://github.com/maximbaz/lightline-ale.git
+[submodule "vim/pack/vendor/opt/AutoComplPop/"]
+	url = https://github.com/vim-scripts/AutoComplPop.git
+[submodule "vim/pack/vendor/start/lightline.vim"]
+	path = vim/pack/vendor/start/lightline.vim
+	url = https://github.com/itchyny/lightline.vim.git
+[submodule "vim/pack/vendor/opt/AutoComplPop"]
+	path = vim/pack/vendor/opt/AutoComplPop
+	url = https://github.com/vim-scripts/AutoComplPop.git
