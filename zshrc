@@ -1,6 +1,17 @@
 # Startup profiling
 # zmodload zsh/zprof
 
+
+# Allow local customizations in the ~/.shell_local_before file
+if [ -f ~/.shell_local_before ]; then
+    source ~/.shell_local_before
+fi
+
+# Allow local customizations in the ~/.zshrc_local_before file
+if [ -f ~/.zshrc_local_before ]; then
+    source ~/.zshrc_local_before
+fi
+
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 eval "$(fasd --init auto)"
 source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
@@ -62,6 +73,16 @@ source /Users/k/.config/broot/launcher/bash/br
 ### Environment variables
 export EDITOR=vim
 export PAGER=less
+
+# Allow local customizations in the ~/.shell_local_after file
+if [ -f ~/.shell_local_after ]; then
+    source ~/.shell_local_after
+fi
+
+# Allow local customizations in the ~/.zshrc_local_after file
+if [ -f ~/.zshrc_local_after ]; then
+    source ~/.zshrc_local_after
+fi
 
 # Startup profiling
 # zprof

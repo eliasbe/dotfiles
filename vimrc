@@ -109,7 +109,7 @@ let g:ale_completion_enabled = 1
 packloadall
 " Load all of the helptags now, after plugins have been loaded.
 " All messages and errors will be ignored.
-"silent! 
+"silent!
 helptags ALL
 
 packadd! sonokai
@@ -177,3 +177,14 @@ set termguicolors
 " colorscheme solarized
 " colorscheme sonokai
 colorscheme nord
+
+
+"---------------------
+" Local customizations
+"---------------------
+
+" local customizations in ~/.vimrc_local
+let $LOCALFILE=expand("~/.vimrc_local")
+if filereadable($LOCALFILE)
+    source $LOCALFILE
+endif

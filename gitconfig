@@ -4,19 +4,27 @@
 	lg = log -p
 	cm = commit -m
 	c = commit
-    gr = log --all --graph --decorate	
+    gr = log --all --graph --decorate
 
 [user]
 	name = Elias Bjartur #eliasbe
 	email = eliaseinars@gmail.com
+
 [credential]
 	helper = store
+
 [core]
 	excludesfile = /Users/k/.gitignore_global
+
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+
 [init]
 	defaultBranch = main
+
+# Allow local customizations in the .gitconfig_local file
+[include]
+	path = ~/.gitconfig_local
