@@ -94,3 +94,6 @@
 [submodule "vim/pack/vendor/opt/AutoComplPop"]
 	path = vim/pack/vendor/opt/AutoComplPop
 	url = https://github.com/vim-scripts/AutoComplPop.git
+[submodule "prezto"]
+	path = zprezto
+	url = https://github.com/sorin-ionescu/prezto.git
