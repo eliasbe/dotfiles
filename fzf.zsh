@@ -5,7 +5,7 @@ if [[ ! "$PATH" == */opt/homebrew/opt/fzf/bin* ]]; then
 fi
 
 #
-source /Users/k/.dotfiles/shell/plugins/zsh-interactive-cd/zsh-interactive-cd.plugin.zsh
+source $HOME/.dotfiles/shell/plugins/zsh-interactive-cd/zsh-interactive-cd.plugin.zsh
 
 # Auto-completion
 # ---------------
@@ -98,7 +98,7 @@ alg() {
 }
 
 
-### Git 
+### Git
 # fshow - git commit browser
 ggrs() {
   git log --graph --color=always \
