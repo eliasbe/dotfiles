@@ -1,6 +1,9 @@
 # Startup profiling
 # zmodload zsh/zprof
 
+# Load shell functions
+source ~/.shell/functions.sh
+
 
 # Allow local customizations in the ~/.shell_local_before file
 if [ -f ~/.shell_local_before ]; then
