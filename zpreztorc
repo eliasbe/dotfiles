@@ -16,8 +16,9 @@ zstyle ':prezto:*:*' case-sensitive 'no'
 zstyle ':prezto:*:*' color 'yes'
 
 # Add additional directories to load prezto modules from
-zstyle ':prezto:load' pmodule-dirs $HOME/.zprezto-contrib
-zstyle ':prezto:load' pmodule-dirs ~/.dotfiles/shell/plugins
+# zstyle ':prezto:load' pmodule-dirs $HOME/.zprezto-contrib
+zstyle ':prezto:load' pmodule-dirs ~/.dotfiles/shell/plugins ~/.dotfiles/shell/contrib
+
 
 # Allow module overrides when pmodule-dirs causes module name collisions
 # zstyle ':prezto:load' pmodule-allow-overrides 'yes'
@@ -49,10 +50,10 @@ zstyle ':prezto:load' pmodule \
   'prompt' \
   'tmux' \
   'clipboard' \
-  'cmdtime'
+  'cmdtime' \
   #'elapsed-time' \
 
-   
+
 
 #
 # Autosuggestions
@@ -217,7 +218,7 @@ SPACESHIP_DIR_LOCK_SYMBOL=''
 # Set syntax highlighting styles.
  zstyle ':prezto:module:syntax-highlighting' styles \
     'single-hyphen-option' 'fg=red' \
-    'double-hyphen-option' 'fg=red' 
+    'double-hyphen-option' 'fg=red'
 #   'builtin' 'bg=blue' \
 #   'command' 'bg=blue' \
 #   'function' 'bg=blue'
