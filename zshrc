@@ -19,7 +19,7 @@ source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 eval "$(fasd --init auto)"
 source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 
-export PATH=/Users/k/bin:$PATH
+export PATH=$HOME/bin:$PATH
 
 # Use vi keybindings
 bindkey -v
