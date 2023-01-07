@@ -66,7 +66,7 @@
 	path = vim/after/ftplugin/pydiction
 	url = https://github.com/rkulla/pydiction.git
 [submodule "shell/fzf-git.sh"]
-	path = shell/fzf-git.sh
+	path = shell/plugins/fzf-git.sh
 	url = https://github.com/junegunn/fzf-git.sh.git
 [submodule "tmux/plugins/tpm"]
 	path = tmux/plugins/tpm
