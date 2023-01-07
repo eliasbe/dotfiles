@@ -7,3 +7,9 @@
 - fasd # included in prezto
 - rg
 - fd
+- broot
+
+https://github.com/junegunn/fzf/blob/master/install
+https://github.com/ogham/exa
+https://github.com/sharkdp/bat
+https://github.com/BurntSushi/ripgrep
