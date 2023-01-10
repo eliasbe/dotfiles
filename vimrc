@@ -132,7 +132,7 @@ nmap <C-i> :Buffers<CR>
 
 
 let g:lightline = {
-      \ 'colorscheme': 'monokai_pro',
+      \ 'colorscheme': 'nord',
       \ }
 
 " let g:lightline = {}
