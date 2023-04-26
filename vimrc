@@ -99,43 +99,43 @@ endif
 set noshowmode
 " Vim mode birtir óþarfi
 
-filetype plugin on
-set omnifunc=syntaxcomplete#Complete
-
+" filetype plugin on
+" set omnifunc=syntaxcomplete#Complete
+"
 let g:ale_completion_enabled = 1
-
-" Load all plugins now.
-" Plugins need to be added to runtimepath before helptags can be generated.
+"
+" " Load all plugins now.
+" " Plugins need to be added to runtimepath before helptags can be generated.
 packloadall
-" Load all of the helptags now, after plugins have been loaded.
-" All messages and errors will be ignored.
-"silent!
-helptags ALL
-
-packadd! sonokai
-packadd! AutoComplPop
-
-set complete+=kspell
-set completeopt=menuone,noinsert
-" set shortmess+=c
-
-let g:pydiction_location = '~/.dotfiles/vim/after/ftplugin/pydiction/complete-dict'
-let g:pydiction_menu_height = 3
-" let g:ctrlp_prompt_mappings = {'PrtClear()': ['<c-ð>'],}
-nnoremap <C-t> :NERDTree<CR>
-
-nmap <C-p> :Files<CR>
-nmap <C-i> :Buffers<CR>
-
-"Change the default mapping and the defailt command to invoke CtrlP (works?)
-" let g:ctrlp_map = '<c-p>'
-
-
-let g:lightline = {
-      \ 'colorscheme': 'nord',
-      \ }
-
-" let g:lightline = {}
+" " Load all of the helptags now, after plugins have been loaded.
+" " All messages and errors will be ignored.
+" "silent!
+" helptags ALL
+"
+" packadd! sonokai
+" packadd! AutoComplPop
+"
+" set complete+=kspell
+" set completeopt=menuone,noinsert
+" " set shortmess+=c
+"
+" let g:pydiction_location = '~/.dotfiles/vim/after/ftplugin/pydiction/complete-dict'
+" let g:pydiction_menu_height = 3
+" " let g:ctrlp_prompt_mappings = {'PrtClear()': ['<c-ð>'],}
+" nnoremap <C-t> :NERDTree<CR>
+"
+" nmap <C-p> :Files<CR>
+" nmap <C-i> :Buffers<CR>
+"
+" "Change the default mapping and the defailt command to invoke CtrlP (works?)
+" " let g:ctrlp_map = '<c-p>'
+"
+"
+" let g:lightline = {
+"       \ 'colorscheme': 'monokai_pro',
+"       \ }
+"
+let g:lightline = {}
 
 let g:lightline.component_expand = {
       \  'linter_checking': 'lightline#ale#checking',
@@ -168,15 +168,15 @@ let g:ale_fixers = {'*': ['remove_trailing_lines', 'trim_whitespace'], 'python':
 let g:ale_fix_on_save = 1
 let g:ale_completion_enabled = 1
 
-au BufNewFile,BufRead Snakefile set syntax=snakemake
-au BufNewFile,BufRead *.snake set syntax=snakemake
+" au BufNewFile,BufRead Snakefile set syntax=snakemake
+" au BufNewFile,BufRead *.snake set syntax=snakemake
 
-set termguicolors
+" set termguicolors
 " syntax enable
 " colorscheme monokai_pro
 " colorscheme solarized
 " colorscheme sonokai
-colorscheme nord
+" colorscheme nord
 
 
 "---------------------

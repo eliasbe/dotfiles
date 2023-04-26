@@ -4,6 +4,16 @@
 # Load shell functions
 source ~/.shell/functions.sh
 
+# source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+#
+# Source Prezto.
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
+#
+eval "$(fasd --init auto)"
+# export PATH=/Users/k/bin:$PATH
+source ~/.shell/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Allow local customizations in the ~/.shell_local_before file
 if [ -f ~/.shell_local_before ]; then
@@ -15,6 +25,7 @@ if [ -f ~/.zshrc_local_before ]; then
     source ~/.zshrc_local_before
 fi
 
+# TODO: move to macos local
 if [ -f /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
     source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi
@@ -54,13 +65,18 @@ bindkey -a '^V' edit-command-line
 source ~/.shell/aliases.sh
 
 # Git fzf
+<<<<<<< HEAD
 source ~/.shell/plugins/fzf-git.sh/fzf-git.sh
+=======
+# source ~/.shell/fzf-git.sh/fzf-git.sh
+>>>>>>> ada
 # eval spaceship_vi_mode_enable
 
-source /Users/k/.config/broot/launcher/bash/br
+## source /Users/k/.config/broot/launcher/bash/br
 
 ### Environment variables
 export EDITOR=vim
+export VISUAL=vim
 export PAGER=less
 
 # Allow local customizations in the ~/.shell_local_after file
@@ -75,3 +91,26 @@ fi
 
 # Startup profiling
 # zprof
+
+# Miðeind/Ada specific
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/data/scratch/elias/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/data/scratch/elias/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/data/scratch/elias/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/data/scratch/elias/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+export CUDA_VISIBLE_DEVICES="$CUDA_VISIBLE_DEVICES"
+
+# Ath. conda aktíverar sjálfkrafa ada -> sub. Veit ekki ástæðuna.
+# ca ada
+
+source /home/elias/.config/broot/launcher/bash/br

@@ -19,6 +19,11 @@ source /Users/k/.config/broot/launcher/bash/br
 # Aliases
 source ~/.shell/aliases.sh
 
+source /Users/k/.config/broot/launcher/bash/br
+
+# Miðeind specific
+export CUDA_VISIBLE_DEVICES="$CUDA_VISIBLE_DEVICES"
+
 # Allow local customizations in the ~/.shell_local_after file
 if [ -f ~/.shell_local_after ]; then
     source ~/.shell_local_after

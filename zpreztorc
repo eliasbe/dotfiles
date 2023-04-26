@@ -16,9 +16,12 @@ zstyle ':prezto:*:*' case-sensitive 'no'
 zstyle ':prezto:*:*' color 'yes'
 
 # Add additional directories to load prezto modules from
+# TODO: ath.
 # zstyle ':prezto:load' pmodule-dirs $HOME/.zprezto-contrib
-zstyle ':prezto:load' pmodule-dirs ~/.dotfiles/shell/plugins ~/.dotfiles/shell/contrib
+# zstyle ':prezto:load' pmodule-dirs ~/.dotfiles/shell/plugins ~/.dotfiles/shell/contrib
 
+zstyle ':prezto:load' pmodule-dirs $HOME/.zprezto-contrib
+zstyle ':prezto:load' pmodule-dirs ~/.shell/plugins
 
 # Allow module overrides when pmodule-dirs causes module name collisions
 # zstyle ':prezto:load' pmodule-allow-overrides 'yes'
@@ -38,22 +41,17 @@ zstyle ':prezto:load' pmodule \
   'history' \
   'directory' \
   'spectrum' \
-  'gnu-utility' \
   'utility' \
-  'osx' \
   'git' \
-  'completion' \
+  'fasd' \
   'syntax-highlighting' \
   'history-substring-search' \
-  'homebrew' \
-  'contrib-prompt' \
   'prompt' \
   'tmux' \
-  'clipboard' \
   'cmdtime' \
+  'completion' \
+  # 'clipboard' \
   #'elapsed-time' \
-
-
 
 #
 # Autosuggestions
@@ -68,7 +66,7 @@ zstyle ':prezto:load' pmodule \
 
 # Set the entries to ignore in static '/etc/hosts' for host completion.
 # zstyle ':prezto:module:completion:*:hosts' etc-host-ignores \
-#   '0.0.0.0' '127.0.0.1'
+  # '0.0.0.0' '127.0.0.1'
 
 #
 # Editor
@@ -95,7 +93,7 @@ zstyle ':prezto:module:editor' key-bindings 'vi'
 #
 
 # Set the command prefix on non-GNU systems.
-zstyle ':prezto:module:gnu-utility' prefix 'g'
+# zstyle ':prezto:module:gnu-utility' prefix 'g'
 
 #
 # History Substring Search

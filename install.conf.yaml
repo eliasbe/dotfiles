@@ -2,29 +2,30 @@
 
 - link:
     ~/.dotfiles: ''
-    ~/.bash_profile: bash_profile
+    # ~/.bash_profile: bash_profile
     ~/.gitconfig: gitconfig
     ~/.vimrc: vimrc
-    ~/.zprofile: zprofile
+    # ~/.zprofile: zprofile
     ~/.zshrc: zshrc
-    ~/.gitignore_global: gitignore_global
+    # ~/.gitignore_global: gitignore_global
+    ~/.zprezto/runcoms/zpreztorc: zpreztorc
     ~/.zpreztorc: zpreztorc
-    ~/.zprezto: zprezto
-    ~/.zlogin: zprezto/runcoms/zlogin
-    ~/.zshenv: zprezto/runcoms/zshenv
+    # ~/.zprezto: zprezto
+    # ~/.zlogin: zprezto/runcoms/zlogin
+    # ~/.zshenv: zprezto/runcoms/zshenv
     ~/.shell: shell
     ~/.tmux.conf: tmux.conf
     ~/.vim: vim
     ~/.condarc: condarc
     ~/.tmux: tmux
-    ~/.config/karabiner: config/karabiner
-    ~/.config/broot: config/broot
-    ~/.config/btop: config/btop
-    ~/.config/htop: config/htop
-    ~/.config/kitty: config/kitty
-    ~/.bashrc: bashrc
+    # ~/.config/karabiner: config/karabiner
+    # ~/.config/broot: config/broot
+    # ~/.config/btop: config/btop
+    # ~/.config/htop: config/htop
+    # ~/.config/kitty: config/kitty
+    # ~/.bashrc: bashrc
     ~/.fzf.zsh: fzf.zsh
-    ~/.fzf.bash: fzf.bash
+    # ~/.fzf.bash: fzf.bash
     # ~/.pythonrc: pythonrc
 
 - shell:
