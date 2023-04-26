@@ -65,11 +65,8 @@ bindkey -a '^V' edit-command-line
 source ~/.shell/aliases.sh
 
 # Git fzf
-<<<<<<< HEAD
 source ~/.shell/plugins/fzf-git.sh/fzf-git.sh
-=======
 # source ~/.shell/fzf-git.sh/fzf-git.sh
->>>>>>> ada
 # eval spaceship_vi_mode_enable
 
 ## source /Users/k/.config/broot/launcher/bash/br
