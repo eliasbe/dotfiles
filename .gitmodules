@@ -95,3 +95,6 @@
 [submodule "vim/pack/vendor/start/vim-fugitive"]
 	path = vim/pack/vendor/start/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
+[submodule "shell/zsh-autosuggestions"]
+	path = shell/zsh-autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions

@@ -54,6 +54,13 @@ alias upp='~/.dotfiles/uppfaera.sh'
 alias ca='conda activate'
 alias cda='conda deactivate'
 
+# Ranger
+alias rr='ranger'
+
+# display tsv
+alias tsvsplit='sed G | tr '\''\t'\'' '\''\n'\'''
+alias trnslview='sed G | tr '\''\t'\'' '\''\n'\'' | fmt -t -w $((160 < $(tput cols) ? 160 : $(tput cols) ))  | less +-R '
+
 # Update dotfiles
 dfu() {
     (
@@ -94,3 +101,25 @@ fh()
 {
   print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed -E 's/ *[0-9]*\*? *//' | sed -E 's/\\/\\\\/g')
 }
+
+# Automatically change the directory in bash after closing ranger
+#
+# This is a bash function for .bashrc to automatically change the directory to
+# the last visited one after ranger quits.
+# To undo the effect of this function, you can type "cd -" to return to the
+# original directory.
+
+ranger-cd ()
+{
+    tempfile="$(mktemp)"
+    /usr/bin/ranger --choosedir="$tempfile" "${@:-$(pwd)}"
+    test -f "$tempfile" &&
+    if [ "$(cat -- "$tempfile")" != "$(echo -n `pwd`)" ]; then
+        cd -- "$(cat "$tempfile")"
+    fi
+    rm -f -- "$tempfile"
+}
+
+# This binds Ctrl-O to ranger-cd:
+# bindkey '^o' ranger-cd
+alias oo=ranger-cd

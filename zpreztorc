@@ -39,14 +39,15 @@ zstyle ':prezto:load' pmodule \
   'spectrum' \
   'utility' \
   'git' \
-  'completion' \
   'fasd' \
   'syntax-highlighting' \
   'history-substring-search' \
   'prompt' \
   'tmux' \
+  'cmdtime' \
+  'completion' \
 
-   
+
 
 #
 # Autosuggestions
@@ -61,7 +62,7 @@ zstyle ':prezto:load' pmodule \
 
 # Set the entries to ignore in static '/etc/hosts' for host completion.
 # zstyle ':prezto:module:completion:*:hosts' etc-host-ignores \
-#   '0.0.0.0' '127.0.0.1'
+  # '0.0.0.0' '127.0.0.1'
 
 #
 # Editor
@@ -211,7 +212,7 @@ SPACESHIP_DIR_LOCK_SYMBOL=''
 # Set syntax highlighting styles.
  zstyle ':prezto:module:syntax-highlighting' styles \
     'single-hyphen-option' 'fg=red' \
-    'double-hyphen-option' 'fg=red' 
+    'double-hyphen-option' 'fg=red'
 #   'builtin' 'bg=blue' \
 #   'command' 'bg=blue' \
 #   'function' 'bg=blue'

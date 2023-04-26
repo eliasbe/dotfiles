@@ -3,7 +3,7 @@
 - link:
     # ~/.bash_profile: bash_profile
     ~/.gitconfig: gitconfig
-    # ~/.vimrc: vimrc
+    ~/.vimrc: vimrc
     # ~/.zprofile: zprofile
     ~/.zshrc: zshrc
     # ~/.gitignore_global: gitignore_global
@@ -11,9 +11,9 @@
     ~/.zpreztorc: zpreztorc
     ~/.shell: shell
     ~/.tmux.conf: tmux.conf  
-    # ~/.vim: vim
+    ~/.vim: vim
     ~/.condarc: condarc
-    # ~/.tmux: tmux
+    ~/.tmux: tmux
     # ~/.config/karabiner: config/karabiner
     # ~/.config/broot: config/broot
     # ~/.config/btop: config/btop

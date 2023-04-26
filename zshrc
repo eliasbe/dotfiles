@@ -2,14 +2,15 @@
 # zmodload zsh/zprof
 
 # source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-# 
+#
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
-# 
+#
 eval "$(fasd --init auto)"
 # export PATH=/Users/k/bin:$PATH
+source ~/.shell/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Use vi keybindings
 bindkey -v
@@ -49,6 +50,7 @@ source ~/.shell/aliases.sh
 
 ### Environment variables
 export EDITOR=vim
+export VISUAL=vim
 export PAGER=less
 
 # Startup profiling
@@ -72,4 +74,7 @@ unset __conda_setup
 
 export CUDA_VISIBLE_DEVICES="$CUDA_VISIBLE_DEVICES"
 
-ca ada
+# Ath. conda aktíverar sjálfkrafa ada -> sub. Veit ekki ástæðuna.
+# ca ada
+
+source /home/elias/.config/broot/launcher/bash/br
