@@ -21,9 +21,9 @@
     ~/.vim: vim
     ~/.vimrc: vimrc
     ~/.zshrc: zshrc
-    ~/.zprezto/runcoms/zpreztorc: zpreztorc
     ~/.zpreztorc: zpreztorc
     ~/.zprezto: zprezto
+    # ~/.zprezto/runcoms/zpreztorc: zpreztorc
 
     # add
     # ~/.zprofile: zprofile
@@ -41,4 +41,5 @@
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
+    - [chsh -s /usr/bin/zsh, Changing default shell to zsh]
     #  - git update-submodules
