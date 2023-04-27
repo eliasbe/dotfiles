@@ -21,9 +21,9 @@
     # ~/.config/karabiner: config/karabiner
     ~/.config/broot: config/broot
     # ~/.config/btop: config/btop
-    # ~/.config/htop: config/htop
+    ~/.config/htop: config/htop
     # ~/.config/kitty: config/kitty
-    # ~/.bashrc: bashrc
+    ~/.bashrc: bashrc
     ~/.fzf.zsh: fzf.zsh
     ~/.fzf.bash: fzf.bash
     # ~/.pythonrc: pythonrc
