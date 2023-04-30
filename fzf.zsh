@@ -1,8 +1,10 @@
 # Setup fzf
 # ---------
-if [[ ! "$PATH" == */home/elias/bin* ]]; then
-  PATH="${PATH:+${PATH}:}/home/elias/bin"
+if [[ ! "$PATH" == *$HOME/bin* ]]; then
+  path_append "$HOME/bin" 
 fi
+
+# PATH="${PATH:+${PATH}:}$HOME/bin"
 
 source $HOME/.dotfiles/shell/plugins/zsh-interactive-cd/zsh-interactive-cd.plugin.zsh
 

@@ -33,10 +33,10 @@
     # ~/.zlogin: zprezto/runcoms/zlogin
     # ~/.zshenv: zprezto/runcoms/zshenv
     # ~/.pythonrc: pythonrc
+    # ~/.config/btop: config/btop
 
     # macos
     # ~/.config/karabiner: config/karabiner
-    # ~/.config/btop: config/btop
     # ~/.config/kitty: config/kitty
 
 - shell:
