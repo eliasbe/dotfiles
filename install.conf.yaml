@@ -41,5 +41,5 @@
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
-    - [chsh -s /usr/bin/zsh, Changing default shell to zsh]
+    # - [chsh -s /usr/bin/zsh, Changing default shell to zsh]
     #  - git update-submodules
