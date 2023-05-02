@@ -35,10 +35,6 @@
     # ~/.pythonrc: pythonrc
     # ~/.config/btop: config/btop
 
-    # macos
-    # ~/.config/karabiner: config/karabiner
-    # ~/.config/kitty: config/kitty
-
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
     # - [chsh -s /usr/bin/zsh, Changing default shell to zsh]
