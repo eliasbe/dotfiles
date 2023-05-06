@@ -1,7 +1,7 @@
 # Setup fzf
 # ---------
 if [[ ! "$PATH" == *$HOME/bin* ]]; then
-  path_append "$HOME/bin" 
+  path_append "$HOME/bin"
 fi
 
 # PATH="${PATH:+${PATH}:}$HOME/bin"
@@ -10,11 +10,11 @@ source $HOME/.dotfiles/shell/plugins/zsh-interactive-cd/zsh-interactive-cd.plugi
 
 # Auto-completion
 # ---------------
-[[ $- == *i* ]] && source "/home/elias/.shell/fzf/completion.zsh" 2> /dev/null
+[[ $- == *i* ]] && source "$HOME/.shell/fzf/completion.zsh" 2> /dev/null
 
 # Key bindings
 # ------------
-source "/home/elias/.shell/fzf/key-bindings.zsh"
+source "$HOME/.shell/fzf/key-bindings.zsh"
 
 export FZF_COMPLETION_TRIGGER=',,'
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow'
@@ -127,4 +127,3 @@ gbrs() {
         --ansi --preview="git --no-pager log -150 --pretty=format:%s '..{2}'") || return
   git checkout $(awk '{print $2}' <<<"$target" )
 }
-
