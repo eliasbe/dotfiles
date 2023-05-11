@@ -104,3 +104,6 @@
 [submodule "shell/zsh-autosuggestions"]
 	path = shell/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions
+[submodule "vim/pack/vendor/start/copilot.vim"]
+	path = vim/pack/vendor/start/copilot.vim
+	url = https://github.com/github/copilot.vim.git
