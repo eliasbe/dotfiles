@@ -62,6 +62,7 @@ set noerrorbells visualbell t_vb=
 " sometimes be convenient.
 set mouse+=a
 
+set hlsearch
 
 
 " Spaces & Tabs
