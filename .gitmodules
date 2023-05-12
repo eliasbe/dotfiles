@@ -62,9 +62,6 @@
 [submodule "vim/pack/vendor/opt/ddc-around"]
 	path = vim/pack/vendor/opt/ddc-around
 	url = https://github.com/Shougo/ddc-around.git
-[submodule "vim/after/ftplugin/pydiction"]
-	path = vim/after/ftplugin/pydiction
-	url = https://github.com/rkulla/pydiction.git
 [submodule "shell/fzf-git.sh"]
 	path = shell/plugins/fzf-git.sh
 	url = https://github.com/junegunn/fzf-git.sh.git
