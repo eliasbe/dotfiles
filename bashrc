@@ -40,4 +40,6 @@ source ~/.shell/aliases.sh
 
 source /users/home/ebe19/.config/broot/launcher/bash/br
 
+export TERM=xterm-256color
+
 eljaenv
