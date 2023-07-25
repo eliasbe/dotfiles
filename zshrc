@@ -61,8 +61,6 @@ bindkey -a '^V' edit-command-line
 source ~/.shell/aliases.sh
 
 # Git fzf
-source ~/.shell/plugins/fzf-git.sh/fzf-git.sh
-# source ~/.shell/fzf-git.sh/fzf-git.sh
 # eval spaceship_vi_mode_enable
 
 
@@ -83,6 +81,7 @@ if [ -f ~/.zshrc_local_after ]; then
     source ~/.zshrc_local_after
 fi
 
+promptinit
 
 # Startup profiling
 # zprof
