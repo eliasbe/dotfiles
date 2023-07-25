@@ -93,13 +93,14 @@ nnoremap <C-t> :NERDTree<CR>
 nmap <C-p> :Files<CR>
 nmap <C-i> :Buffers<CR>
 nmap <C-c> :Commands<CR>
+nmap <C-n> :set nonu! nornu!<CR>
 
+ let g:lightline = {}
 
-" let g:lightline = {}
-
-let g:lightline = {
-      \ 'colorscheme': 'monokai_pro',
-      \ }
+" TODO: move to local macos
+" let g:lightline = {
+"       \ 'colorscheme': 'monokai_pro',
+"       \ }
 
 
 let g:lightline.component_expand = {
@@ -128,7 +129,7 @@ let g:lightline.active = {
 
 let g:ale_linters = {'python': ['flake8', 'mypy']} " bandit, mypy, pylint, pyright
 let g:ale_fixers = {'*': ['remove_trailing_lines', 'trim_whitespace'], 'python': ['black', 'isort'], 'cpp': ['clang-format'], 'c': ['clang-format']} "isort (imports) remove_trailing_lines, trim_whitespace
-let g:ale_fix_on_save = 1
+let g:ale_fix_on_save = 0
 let g:ale_completion_enabled = 1
 
 au BufNewFile,BufRead Snakefile set syntax=snakemake
@@ -140,6 +141,23 @@ au BufNewFile,BufRead *.snake set syntax=snakemake
 " colorscheme sonokai
 " colorscheme nord
 
+" Activate autoupdate on exit
+" let g:tmux_navigator_save_on_switch = 1
+
+" Disable vim->tmux navigation when the Vim pane is zoomed in tmux
+" let g:tmux_navigator_disable_when_zoomed = 1
+
+" If the Vim pane is zoomed, stay zoomed when moving to another tmux pane
+" let g:tmux_navigator_preserve_zoom = 1
+
+" Custom Key Bindings
+let g:tmux_navigator_no_mappings = 1
+
+nnoremap <silent> <M-l> :TmuxNavigateLeft<cr>
+nnoremap <silent> <M-h> :TmuxNavigateRight<cr>
+" nnoremap <silent> {Down-Mapping} :TmuxNavigateDown<cr>
+" nnoremap <silent> {Up-Mapping} :TmuxNavigateUp<cr>
+" nnoremap <silent> {Previous-Mapping} :TmuxNavigatePrevious<cr>
 
 "---------------------
 " Local customizations
