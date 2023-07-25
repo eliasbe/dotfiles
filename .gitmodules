@@ -62,9 +62,6 @@
 [submodule "vim/pack/vendor/opt/ddc-around"]
 	path = vim/pack/vendor/opt/ddc-around
 	url = https://github.com/Shougo/ddc-around.git
-[submodule "shell/fzf-git.sh"]
-	path = shell/plugins/fzf-git.sh
-	url = https://github.com/junegunn/fzf-git.sh.git
 [submodule "tmux/plugins/tpm"]
 	path = tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm.git
@@ -110,3 +107,6 @@
 [submodule "vim/pack/vendor/start/undotree"]
 	path = vim/pack/vendor/start/undotree
 	url = https://github.com/mbbill/undotree.git
+[submodule "shell/plugins/fzf-git.sh"]
+	path = shell/fzf/fzf-git.sh
+	url = https://github.com/junegunn/fzf-git.sh.git

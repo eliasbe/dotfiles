@@ -1,3 +1,5 @@
+# TODO: Make paths universal
+
 # Setup fzf
 # ---------
 if [[ ! "$PATH" == */opt/homebrew/opt/fzf/bin* ]]; then
@@ -11,3 +13,6 @@ fi
 # Key bindings
 # ------------
 source "/opt/homebrew/opt/fzf/shell/key-bindings.bash"
+
+source "$HOME/.shell/fzf/fzf-git.sh"
+

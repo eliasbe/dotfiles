@@ -15,10 +15,23 @@ source $HOME/.dotfiles/shell/plugins/zsh-interactive-cd/zsh-interactive-cd.plugi
 # Key bindings
 # ------------
 source "$HOME/.shell/fzf/key-bindings.zsh"
+source "$HOME/.shell/fzf/fzf-git.sh"
 
+# TODO: systemize ' and "
 export FZF_COMPLETION_TRIGGER=',,'
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow'
-#export FZF_DEFAULT_OPTS='--bind "ctrl-y:execute-silent(printf {} | cut -f 2- | wl-copy --trim-newline)"'
+export FZF_DEFAULT_OPTS='
+        --bind "ctrl-y:execute-silent(printf {} | cut -f 2- | wl-copy --trim-newline)"
+        --preview  "bat --color=always --line-range :100 {}"'
+#        --preview "tree -C {} | head -50"'
+export FZF_CTRL_R_OPTS="
+        --preview 'echo {}' --preview-window up:3:hidden:wrap
+        --bind 'ctrl-s:toggle-preview'
+        --color header:italic
+        --header 'Press CTRL-S to preview whole command'" 
+        
+#        --bind 'ctrl-y:execute-silent(echo -n {2..} | pbcopy)+abort'
+#        --header 'Press CTRL-Y to copy command into clipboard'" 
 
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_CTRL_T_OPTS="--preview 'bat --color=always --line-range :100 {}'"
@@ -95,7 +108,7 @@ bcp() {
 alg() {
     [ $# -gt 0 ] && fasd -f -e ${EDITOR} "$*" && return
     local file
-    file="$(fasd -Rfl "$1" | fzf -1 -0 --no-sort +m)" && vi "${file}" || return 1
+    file="$(fasd -Rfl "$1" | fzf -1 -0 --no-sort +m)" && vim "${file}" || return 1
 }
 
 # fasd & fzf change directory - jump using `fasd` if given argument, filter output of `fasd` using `fzf` else
@@ -103,7 +116,7 @@ unalias z
 z() {
     [ $# -gt 0 ] && fasd_cd -d "$*" && return
     local dir
-    dir="$(fasd -Rdl "$1" | fzf -1 -0 --no-sort +m)" && cd "${dir}" || return 1
+    dir="$(fasd -Rdl "$1" | fzf --preview "tree -C {} | head -50" -1 -0 --no-sort +m)" && cd "${dir}" || return 1
 }
 
 
