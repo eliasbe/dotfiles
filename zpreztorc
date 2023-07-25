@@ -20,7 +20,7 @@ zstyle ':prezto:*:*' color 'yes'
 # zstyle ':prezto:load' pmodule-dirs $HOME/.zprezto-contrib
 # zstyle ':prezto:load' pmodule-dirs ~/.dotfiles/shell/plugins ~/.dotfiles/shell/contrib
 
-zstyle ':prezto:load' pmodule-dirs $HOME/.zprezto-contrib
+zstyle ':prezto:load' pmodule-dirs ~/.shell/contrib
 zstyle ':prezto:load' pmodule-dirs ~/.shell/plugins
 
 # Allow module overrides when pmodule-dirs causes module name collisions
@@ -47,11 +47,11 @@ zstyle ':prezto:load' pmodule \
   'syntax-highlighting' \
   'history-substring-search' \
   'prompt' \
+  'contrib-prompt' \
   'tmux' \
-  'cmdtime' \
   'completion' \
+  'cmdtime' \
   # 'clipboard' \
-  #'elapsed-time' \
 
 #
 # Autosuggestions
@@ -131,6 +131,7 @@ zstyle ':prezto:module:editor' key-bindings 'vi'
 # Auto set to 'off' on dumb terminals.
 ## zstyle ':prezto:module:prompt' theme 'sorin'
 zstyle ':prezto:module:prompt' theme 'pure'
+# zstyle ':prezto:module:prompt' theme 'spaceship'
 
 # autoload -U promptinit; promptinit
 #
