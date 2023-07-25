@@ -16,12 +16,7 @@ zstyle ':prezto:*:*' case-sensitive 'no'
 zstyle ':prezto:*:*' color 'yes'
 
 # Add additional directories to load prezto modules from
-# TODO: ath.
-# zstyle ':prezto:load' pmodule-dirs $HOME/.zprezto-contrib
-# zstyle ':prezto:load' pmodule-dirs ~/.dotfiles/shell/plugins ~/.dotfiles/shell/contrib
-
-zstyle ':prezto:load' pmodule-dirs ~/.shell/contrib
-zstyle ':prezto:load' pmodule-dirs ~/.shell/plugins
+zstyle ':prezto:load' pmodule-dirs ~/.shell/contrib ~/.shell/plugins
 
 # Allow module overrides when pmodule-dirs causes module name collisions
 # zstyle ':prezto:load' pmodule-allow-overrides 'yes'
