@@ -32,13 +32,13 @@ there() {
 # List git files and show their diffs
 gds() {
   preview="git diff $@ --color=always -- {-1}"
-  git diff $@ --name-only | fzf -m --ansi --preview $preview
+  git diff $@ --name-only | fzf -m --ansi --preview $preview --bind 'enter:become(vim {})'
 }
 
 # list conda environments and their packages with fzf
 cel() {
     preview='conda list -n {}'
-    conda env list | awk '{if (NR>2) print $1}' | fzf -m --ansi --preview $preview --bind 'enter:become(conda list -n {1} | fzf --preview="")'
+    conda env list | awk '{if (NR>2) print $1}' | fzf -m --ansi --preview $preview --bind 'enter:become(conda list -n {1} | awk "{if (NR>3) print}" | fzf --preview="")'
 }
 
 # Update dotfiles
