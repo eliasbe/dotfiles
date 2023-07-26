@@ -29,9 +29,16 @@ there() {
     cd "$(readlink "${there}")"
 }
 
+# List git files and show their diffs
 gds() {
   preview="git diff $@ --color=always -- {-1}"
   git diff $@ --name-only | fzf -m --ansi --preview $preview
+}
+
+# list conda environments and their packages with fzf
+cel() {
+    preview='conda list -n {}'
+    conda env list | awk '{if (NR>2) print $1}' | fzf -m --ansi --preview $preview
 }
 
 # Update dotfiles
