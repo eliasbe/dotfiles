@@ -19,7 +19,7 @@ source "$HOME/.shell/fzf/fzf-git.sh"
 
 # TODO: systemize ' and "
 export FZF_COMPLETION_TRIGGER=',,'
-export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow'
+export FZF_DEFAULT_COMMAND='fd --type f --follow'
 export FZF_DEFAULT_OPTS='
         --bind "ctrl-y:execute-silent(printf {} | cut -f 2- | wl-copy --trim-newline)"
         --preview  "bat --color=always --line-range :100 {}"'
@@ -122,16 +122,18 @@ z() {
 
 ### Git
 # fshow - git commit browser
-ggrs() {
-  git log --graph --color=always \
-      --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" "$@" |
-  fzf --ansi --no-sort --reverse --tiebreak=index --bind=ctrl-s:toggle-sort \
-      --bind "ctrl-m:execute:
+ggrs ()
+{
+  git log --graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"  | \
+   fzf --ansi --no-sort --reverse --tiebreak=index --preview \
+   'f() { set -- $(echo -- "$@" | grep -o "[a-f0-9]\{7\}"); [ $# -eq 0 ] || git show --color=always $1 ; }; f {}' \
+   --bind "j:down,k:up,alt-j:preview-down,alt-k:preview-up,ctrl-d:preview-page-down,ctrl-u:preview-page-up,q:abort,ctrl-m:execute:
                 (grep -o '[a-f0-9]\{7\}' | head -1 |
                 xargs -I % sh -c 'git show --color=always % | less -R') << 'FZF-EOF'
                 {}
-FZF-EOF"
+FZF-EOF" --preview-window=right:60%
 }
+
 
 # fco_preview - checkout git branch/tag, with a preview showing the commits between the tag/branch and HEAD
 gbrs() {

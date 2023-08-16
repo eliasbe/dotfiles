@@ -37,8 +37,8 @@ gds() {
 
 # list conda environments and their packages with fzf
 cel() {
-    preview='conda list -n {}'
-    conda env list | awk '{if (NR>2) print $1}' | fzf -m --ansi --preview $preview --bind 'enter:become(conda list -n {1} | awk "{if (NR>3) print}" | fzf --preview="")'
+    preview='conda list -n {1}'
+    conda env list | awk '{if (NR>2) print}' | fzf -m --ansi --preview $preview --bind 'enter:become(conda list -n {1} | awk "{if (NR>3) print}" | fzf --preview="")'
 }
 
 # Update dotfiles
@@ -103,3 +103,8 @@ ranger-cd ()
 # This binds Ctrl-O to ranger-cd:
 # bindkey '^o' ranger-cd
 alias oo=ranger-cd
+
+jql ()
+{
+    jq -C '.' "$@" | less -R
+}

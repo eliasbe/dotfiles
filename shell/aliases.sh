@@ -31,6 +31,8 @@ alias t="clear"
 
 alias v="vim"
 
+alias et="r"
+
 # git aliases || git module hjá prezto hefur tekið yfir og ákveðin aliös í gitconfig
 #alias gs="git status"
 #alias gc="git commit"
