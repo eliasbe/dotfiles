@@ -19,7 +19,7 @@ source "$HOME/.shell/fzf/fzf-git.sh"
 
 # TODO: systemize ' and "
 export FZF_COMPLETION_TRIGGER=',,'
-export FZF_DEFAULT_COMMAND='fd --type f --follow'
+export FZF_DEFAULT_COMMAND='fd --type f --follow --hidden --exclude ".git"'
 export FZF_DEFAULT_OPTS='
         --bind "ctrl-y:execute-silent(printf {} | cut -f 2- | wl-copy --trim-newline)"
         --preview  "bat --color=always --line-range :100 {}"'
@@ -35,7 +35,7 @@ export FZF_CTRL_R_OPTS="
 
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_CTRL_T_OPTS="--preview 'bat --color=always --line-range :100 {}'"
-export FZF_ALT_C_COMMAND='fd --type d . --hidden'
+export FZF_ALT_C_COMMAND='fd --type d . --hidden --exclude ".git"'
 export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -50'"
 # Use fd command for listing path candidates.
 # - The first argument to the function ($1) is the base path to start traversal
@@ -55,10 +55,11 @@ export FZF_COMPLETION_OPTS='--border --info=inline'
 ## fkill - kill processes - list only the ones you can kill.
 fkill() {
     local pid
+    local preview=""
     if [ "$UID" != "0" ]; then
-        pid=$(ps -f -u $UID | sed 1d | fzf -m | awk '{print $2}')
+        pid=$(ps -f -u $UID | sed 1d | fzf -m --preview=$preview | awk '{print $2}')
     else
-        pid=$(ps -ef | sed 1d | fzf -m | awk '{print $2}')
+        pid=$(ps -ef | sed 1d | fzf -m  --preview=$preview| awk '{print $2}')
     fi
 
     if [ "x$pid" != "x" ]
