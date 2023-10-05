@@ -21,8 +21,11 @@ source "$HOME/.shell/fzf/fzf-git.sh"
 export FZF_COMPLETION_TRIGGER=',,'
 export FZF_DEFAULT_COMMAND='fd --type f --follow --hidden --exclude ".git"'
 export FZF_DEFAULT_OPTS='
+        --preview  "bat --color=always --line-range :100 {}"
         --bind "ctrl-y:execute-silent(printf {} | cut -f 2- | wl-copy --trim-newline)"
-        --preview  "bat --color=always --line-range :100 {}"'
+        --bind "ctrl-alt-s:toggle-preview"
+        --bind "ctrl-s:change-preview(tree -C {})"'
+        # --bind "j:down,k:up"' # assess
 #        --preview "tree -C {} | head -50"'
 export FZF_CTRL_R_OPTS="
         --preview 'echo {}' --preview-window up:3:hidden:wrap
@@ -125,7 +128,7 @@ z() {
 # fshow - git commit browser
 ggrs ()
 {
-  git log --graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"  | \
+  git log --all --graph --decorate --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"  | \
    fzf --ansi --no-sort --reverse --tiebreak=index --preview \
    'f() { set -- $(echo -- "$@" | grep -o "[a-f0-9]\{7\}"); [ $# -eq 0 ] || git show --color=always $1 ; }; f {}' \
    --bind "j:down,k:up,alt-j:preview-down,alt-k:preview-up,ctrl-d:preview-page-down,ctrl-u:preview-page-up,q:abort,ctrl-m:execute:

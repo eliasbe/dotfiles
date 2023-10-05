@@ -29,16 +29,17 @@ there() {
     cd "$(readlink "${there}")"
 }
 
+# TODO: Move to fzf?
 # List git files and show their diffs
 gds() {
   preview="git diff $@ --color=always -- {-1}"
-  git diff $@ --name-only | fzf -m --ansi --preview $preview --bind 'enter:become(vim {})'
+  git diff $@ --name-only | fzf -m --ansi --preview $preview --bind 'enter:execute(git add {} &),ctrl-d:preview-page-down,ctrl-u:preview-page-up'
 }
 
 # list conda environments and their packages with fzf
 cel() {
     preview='conda list -n {1}'
-    conda env list | awk '{if (NR>2) print}' | fzf -m --ansi --preview $preview --bind 'enter:become(conda list -n {1} | awk "{if (NR>3) print}" | fzf --preview="")'
+    conda env list | awk '{if (NR>2) print}' | fzf -m --ansi --preview $preview --bind 'enter:become(conda list -n {1} | awk "{if (NR>3) print}" | fzf --preview=""),ctrl-d:preview-page-down,ctrl-u:preview-page-up'
 }
 
 # Update dotfiles
