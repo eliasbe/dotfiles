@@ -23,6 +23,7 @@
     ~/.zshrc: zshrc
     ~/.zpreztorc: zpreztorc
     ~/.zprezto: zprezto
+    ~/bin/rr: rr
     # ~/.zprezto/runcoms/zpreztorc: zpreztorc
 
     # add
