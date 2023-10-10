@@ -33,7 +33,7 @@ there() {
 # List git files and show their diffs
 gds() {
   preview="git diff $@ --color=always -- {-1}"
-  git diff $@ --name-only | fzf -m --ansi --preview $preview --bind 'enter:execute(git add {} &),ctrl-d:preview-page-down,ctrl-u:preview-page-up'
+  git diff $@ --name-only | fzf -m --ansi --preview $preview --bind 'enter:execute(git add {} &)'
 }
 
 # list conda environments and their packages with fzf

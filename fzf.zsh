@@ -24,7 +24,8 @@ export FZF_DEFAULT_OPTS='
         --preview  "bat --color=always --line-range :100 {}"
         --bind "ctrl-y:execute-silent(printf {} | cut -f 2- | wl-copy --trim-newline)"
         --bind "ctrl-alt-s:toggle-preview"
-        --bind "ctrl-s:change-preview(tree -C {})"'
+        --bind "ctrl-s:change-preview(tree -C {})"
+        --bind "ctrl-d:preview-half-page-down,ctrl-u:preview-half-page-up"'
         # --bind "j:down,k:up"' # assess
 #        --preview "tree -C {} | head -50"'
 export FZF_CTRL_R_OPTS="
