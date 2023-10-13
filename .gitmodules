@@ -102,7 +102,7 @@
 	path = vim/pack/vendor/start/copilot.vim
 	url = https://github.com/github/copilot.vim.git
 [submodule "vim/pack/vendor/start/vim-smoothie"]
-	path = vim/pack/vendor/start/vim-smoothie
+	path = vim/pack/vendor/opt/vim-smoothie
 	url = https://github.com/psliwka/vim-smoothie.git
 [submodule "vim/pack/vendor/start/undotree"]
 	path = vim/pack/vendor/start/undotree
