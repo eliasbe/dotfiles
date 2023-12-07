@@ -49,6 +49,13 @@ dfu() {
     )
 }
 
+# Update local dotfiles
+dflu() {
+    (
+        cd ~/.dotfiles_local && git pull --ff-only && ./install -q && ./install -c install-binaries.conf.yaml
+    )
+}
+
 # Create a directory and cd into it
 mcd() {
     mkdir "${1}" && cd "${1}"
