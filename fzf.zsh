@@ -32,10 +32,8 @@ export FZF_CTRL_R_OPTS="
         --preview 'echo {}' --preview-window up:3:hidden:wrap
         --bind 'ctrl-s:toggle-preview'
         --color header:italic
-        --header 'Press CTRL-S to preview whole command'" 
-        
-#        --bind 'ctrl-y:execute-silent(echo -n {2..} | pbcopy)+abort'
-#        --header 'Press CTRL-Y to copy command into clipboard'" 
+        --bind 'ctrl-y:execute-silent(echo -n {2..} | pbcopy)'
+        --header 'Press CTRL-S to preview whole command, CTRL-Y to copy command into clipboard'" 
 
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_CTRL_T_OPTS="--preview 'bat --color=always --line-range :100 {}'"
