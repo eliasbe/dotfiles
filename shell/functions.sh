@@ -121,3 +121,15 @@ jqm ()
 {
     jq -C '.' "$@" | more
 }
+
+# Forward port $2 on compute-$1 to localhost
+eljaport()
+{
+    ssh -t -t elja -L "$2":localhost:"$2" ssh compute-$1 -L "$2":localhost:"$2"
+}
+
+# SSH into compute-$1
+eljacompute()
+{
+    ssh -t -t elja ssh compute-$1
+}
