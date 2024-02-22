@@ -81,6 +81,11 @@ if [ -f ~/.zshrc_local_after ]; then
     source ~/.zshrc_local_after
 fi
 
+# Environment variables
+if [ -f ~/.env_variables ]; then
+    source ~/.env_variables
+fi
+
 promptinit
 
 # Startup profiling
