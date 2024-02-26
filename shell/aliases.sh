@@ -1,3 +1,6 @@
+# Meta
+alias af="alias | fzf"
+
 # ls aliases
 #alias ll='ls -lh'
 #alias la='ls -lha'
@@ -60,3 +63,5 @@ alias cda='conda deactivate'
 # display tsv
 alias tsvsplit='sed G | tr '\''\t'\'' '\''\n'\'''
 alias trnslview='sed G | tr '\''\t'\'' '\''\n'\'' | fmt -t -w $((160 < $(tput cols) ? 160 : $(tput cols) ))  | less +-R '
+
+alias tf='tail -f'
