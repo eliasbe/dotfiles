@@ -52,6 +52,13 @@ dfu() {
 # Update local dotfiles
 dflu() {
     (
+        cd ~/.dotfiles_local && git pull --ff-only && ./install -q 
+    )
+}
+
+# Update local dotfiles and install binaries
+dflui() {
+    (
         cd ~/.dotfiles_local && git pull --ff-only && ./install -q && ./install -c install-binaries.conf.yaml
     )
 }
