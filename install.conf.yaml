@@ -7,25 +7,24 @@
 
 - link:
     ~/.dotfiles: ''
-    ~/.bashrc: bashrc
-    ~/.condarc: condarc
+    ~/.bashrc: shell/bashrc
+    ~/.condarc: shell/condarc
     ~/.config/broot: config/broot
     ~/.config/htop: config/htop
-    ~/.fzf.zsh: fzf.zsh
-    ~/.fzf.bash: fzf.bash
-    ~/.gitconfig: gitconfig
-    ~/.gitignore_global: gitignore_global
+    ~/.fzf.zsh: shell/fzf/fzf.zsh
+    ~/.fzf.bash: shell/fzf/fzf.bash
+    ~/.gitconfig: git/gitconfig
+    ~/.gitignore_global: git/gitignore_global
     ~/.shell: shell
     ~/.tmux: tmux
-    ~/.tmux.conf: tmux.conf
+    ~/.tmux.conf: tmux/tmux.conf
     ~/.vim: vim
-    ~/.vimrc: vimrc
-    ~/.zshrc: zshrc
-    ~/.zpreztorc: zpreztorc
+    ~/.vimrc: vim/vimrc
+    ~/.zshrc: shell/zshrc
+    ~/.zpreztorc: shell/zpreztorc
     ~/.zprezto: zprezto
-    ~/bin/rr: rr
+    ~/bin/rr: shell/rr
     ~/.ipython/profile_default/ipython_config.py: ipython_config.py
-    # ~/.zprezto/runcoms/zpreztorc: zpreztorc
 
     # add
     # ~/.zprofile: zprofile
@@ -39,5 +38,3 @@
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
-    # - [chsh -s /usr/bin/zsh, Changing default shell to zsh]
-    #  - git update-submodules
