@@ -10,7 +10,6 @@
     ~/.bashrc: shell/bashrc
     ~/.condarc: shell/condarc
     ~/.config/broot: config/broot
-    ~/.config/htop: config/htop
     ~/.fzf.zsh: shell/fzf/fzf.zsh
     ~/.fzf.bash: shell/fzf/fzf.bash
     ~/.gitconfig: git/gitconfig
