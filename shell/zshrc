@@ -1,6 +1,16 @@
 # Startup profiling
 # zmodload zsh/zprof
 
+# Allow local customizations in the ~/.shell_local_before file
+if [ -f ~/.shell_local_before ]; then
+    source ~/.shell_local_before
+fi
+
+# Allow local customizations in the ~/.zshrc_local_before file
+if [ -f ~/.zshrc_local_before ]; then
+    source ~/.zshrc_local_before
+fi
+
 # Load shell functions
 source ~/.shell/functions.sh
 
@@ -15,21 +25,12 @@ eval "$(fasd --init auto)"
 # export PATH=/Users/k/bin:$PATH
 source ~/.shell/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-# Allow local customizations in the ~/.shell_local_before file
-if [ -f ~/.shell_local_before ]; then
-    source ~/.shell_local_before
-fi
-
-# Allow local customizations in the ~/.zshrc_local_before file
-if [ -f ~/.zshrc_local_before ]; then
-    source ~/.zshrc_local_before
-fi
 
 
 eval "$(fasd --init auto)"
 source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 
-export PATH=$HOME/bin:$PATH
+path_append ~/bin
 
 # Use vi keybindings
 bindkey -v
