@@ -76,10 +76,11 @@ set noshowmode
 packloadall
 " Load all of the helptags now, after plugins have been loaded.
 " All messages and errors will be ignored.
-" silent!
+silent!
 helptags ALL
-"
+
 packadd! sonokai
+packadd! vim-smoothie
 
 
 
