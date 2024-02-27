@@ -21,13 +21,16 @@ source "$HOME/.shell/fzf/fzf-git.sh"
 export FZF_COMPLETION_TRIGGER=',,'
 export FZF_DEFAULT_COMMAND='fd --type f --follow --hidden --exclude ".git"'
 export FZF_DEFAULT_OPTS='
-        --preview  "bat --color=always --line-range :100 {}"
-        --bind "ctrl-y:execute-silent(printf {} | cut -f 2- | wl-copy --trim-newline)"
-        --bind "ctrl-alt-s:toggle-preview"
-        --bind "ctrl-s:change-preview(tree -C {})"
-        --bind "ctrl-d:preview-half-page-down,ctrl-u:preview-half-page-up"'
+         --preview  "bat --color=always --line-range :100 {}"
+         --bind "ctrl-y:execute-silent(printf {} | cut -f 2- | wl-copy --trim-newline)"
+         --bind "ctrl-s:change-preview(tree -C {})"
+         --bind "ctrl-alt-s:change-preview(bat --color=always --line-range :100 {})"
+         --bind "ctrl-d:preview-half-page-down,ctrl-u:preview-half-page-up"'
+        # --bind "ctrl-alt-s:toggle-preview"
         # --bind "j:down,k:up"' # assess
-#        --preview "tree -C {} | head -50"'
+        # --preview "tree -C {} | head -50"'
+
+
 export FZF_CTRL_R_OPTS="
         --preview 'echo {}' --preview-window up:3:hidden:wrap
         --bind 'ctrl-s:toggle-preview'
