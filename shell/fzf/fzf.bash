@@ -14,5 +14,4 @@ fi
 # ------------
 source "/opt/homebrew/opt/fzf/shell/key-bindings.bash"
 
-source "$HOME/.shell/fzf/fzf-git.sh"
-
+source "$HOME/.shell/fzf/fzf-git.sh/fzf-git.sh"
