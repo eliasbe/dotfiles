@@ -30,7 +30,7 @@ source ~/.shell/zsh-autosuggestions/zsh-autosuggestions.zsh
 eval "$(fasd --init auto)"
 source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 
-path_append ~/bin
+path_prepend ~/bin
 
 # Use vi keybindings
 bindkey -v
