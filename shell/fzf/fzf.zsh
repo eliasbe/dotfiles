@@ -42,6 +42,17 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_CTRL_T_OPTS="--preview 'bat --color=always --line-range :100 {}'"
 export FZF_ALT_C_COMMAND='fd --type d . --hidden --exclude ".git"'
 export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -50'"
+
+_fzf_git_fzf() {
+  fzf-tmux -p95%,95% -- \
+    --layout=reverse --multi --height=50% --min-height=20 --border \
+    --border-label-pos=2 \
+    --color='header:italic:underline,label:blue' \
+    --preview-window='right,50%,border-left' \
+    --bind='ctrl-s:change-preview-window(down,50%,border-top|hidden|)' "$@" \
+    --header='CTRL-O (open in browser) ╱ ALT-E (open in editor) ╱ CTRL-S (change preview) ╱ (SHIFT) TAB (select)'
+}
+
 # Use fd command for listing path candidates.
 # - The first argument to the function ($1) is the base path to start traversal
 # - See the source code (completion.{bash,zsh}) for the details.
