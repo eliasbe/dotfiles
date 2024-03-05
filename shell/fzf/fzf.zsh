@@ -49,8 +49,9 @@ _fzf_git_fzf() {
     --border-label-pos=2 \
     --color='header:italic:underline,label:blue' \
     --preview-window='right,50%,border-left' \
-    --bind='ctrl-s:change-preview-window(down,50%,border-top|hidden|)' "$@" \
-    --header='CTRL-O (open in browser) ╱ ALT-E (open in editor) ╱ CTRL-S (change preview) ╱ (SHIFT) TAB (select)'
+    --bind='ctrl-s:change-preview-window(down,50%,border-top|hidden|)' \
+    --bind='ctrl-a:execute(echo {} | awk "{print \$2}" | xargs -I % git add % &)' "$@" \
+    --header='CTRL-O (open in browser) ╱ ALT-E (open in editor) ╱ CTRL-S (change preview) ╱ (SHIFT) TAB (select) ╱ CTRL-A (git add)'
 }
 
 # Use fd command for listing path candidates.
