@@ -4,8 +4,7 @@ if [[ ! "$PATH" == *$HOME/bin* ]]; then
   path_append "$HOME/bin"
 fi
 
-# PATH="${PATH:+${PATH}:}$HOME/bin"
-
+# TODO: does this belong here?
 source $HOME/.dotfiles/shell/plugins/zsh-interactive-cd/zsh-interactive-cd.plugin.zsh
 
 # Auto-completion
