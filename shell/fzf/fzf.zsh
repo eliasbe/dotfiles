@@ -9,11 +9,11 @@ source $HOME/.dotfiles/shell/plugins/zsh-interactive-cd/zsh-interactive-cd.plugi
 
 # Auto-completion
 # ---------------
-[[ $- == *i* ]] && source "$HOME/.shell/fzf/completion.zsh" 2> /dev/null
+[[ $- == *i* ]] && source "$HOME/.dotfiles/fzf/shell/completion.zsh" 2> /dev/null
 
 # Key bindings
 # ------------
-source "$HOME/.shell/fzf/key-bindings.zsh"
+source "$HOME/.dotfiles/fzf/shell/key-bindings.zsh"
 source "$HOME/.shell/fzf/fzf-git.sh/fzf-git.sh"
 
 # TODO: systemize ' and "

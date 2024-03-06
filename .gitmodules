@@ -110,3 +110,6 @@
 [submodule "shell/plugins/fzf-git.sh"]
 	path = shell/fzf/fzf-git.sh
 	url = https://github.com/junegunn/fzf-git.sh.git
+[submodule "fzf"]
+	path = fzf
+	url = https://github.com/junegunn/fzf.git
