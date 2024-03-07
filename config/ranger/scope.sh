@@ -50,6 +50,15 @@ OPENSCAD_COLORSCHEME="${RNGR_OPENSCAD_COLORSCHEME:-Tomorrow Night}"
 SQLITE_TABLE_LIMIT=20  # Display only the top <limit> tables in database, set to 0 for no exhaustive preview (only the sqlite_master table is displayed).
 SQLITE_ROW_LIMIT=5     # Display only the first and the last (<limit> - 1) records in each table, set to 0 for no limits.
 
+drop_bigsize() {
+    # 51200 == 50 MB * 1024
+    # change this number for different sizes
+    if [[ `du "${FILE_PATH}" | cut -f1` -gt 10240 ]]; then
+        echo '----- FILE TOO BIG -----'
+        exit 0
+    fi
+}
+
 handle_extension() {
     case "${FILE_EXTENSION_LOWER}" in
         ## Archive
@@ -469,6 +478,8 @@ MIMETYPE="$( file --dereference --brief --mime-type -- "${FILE_PATH}" )"
 if [[ "${PV_IMAGE_ENABLED}" == 'True' ]]; then
     handle_image "${MIMETYPE}"
 fi
+
+drop_bigsize
 
 handle_extension
 handle_mime "${MIMETYPE}"
