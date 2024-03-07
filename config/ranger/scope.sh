@@ -51,9 +51,23 @@ SQLITE_TABLE_LIMIT=20  # Display only the top <limit> tables in database, set to
 SQLITE_ROW_LIMIT=5     # Display only the first and the last (<limit> - 1) records in each table, set to 0 for no limits.
 
 drop_bigsize() {
-    # 51200 == 50 MB * 1024
-    # change this number for different sizes
-    if [[ `du "${FILE_PATH}" | cut -f1` -gt 10240 ]]; then
+    # Input size limit in MB as the first argument to the function
+    local size_limit_mb=$1
+    # Convert size limit from MB to kilobytes (KB) since `du` outputs in KB by default
+    # 1 MB = 1024 KB
+    local size_limit_kb=$((size_limit_mb * 1024))
+
+    # Check if the FILE_PATH environment variable is set
+    if [[ -z "${FILE_PATH}" ]]; then
+        echo "FILE_PATH is not set."
+        exit 1
+    fi
+
+    # Get file size in KB using `du` and cut to extract the size
+    local file_size_kb=$(du "${FILE_PATH}" | cut -f1)
+
+    # Compare file size with the size limit
+    if [[ ${file_size_kb} -gt ${size_limit_kb} ]]; then
         echo '----- FILE TOO BIG -----'
         exit 0
     fi
@@ -121,6 +135,7 @@ handle_extension() {
 
         ## JSON
         json|jsonl)
+            drop_bigsize 4
             jq --color-output . "${FILE_PATH}" && exit 5
             python -m json.tool -- "${FILE_PATH}" && exit 5
             ;;
@@ -479,7 +494,7 @@ if [[ "${PV_IMAGE_ENABLED}" == 'True' ]]; then
     handle_image "${MIMETYPE}"
 fi
 
-drop_bigsize
+drop_bigsize 10
 
 handle_extension
 handle_mime "${MIMETYPE}"
