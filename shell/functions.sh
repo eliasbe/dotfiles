@@ -124,9 +124,37 @@ jql ()
     jq -C '.' "$@" | less -R
 }
 
+jqfl ()
+{
+    local width=${2:-100} # Second argument, 100 default value
+    jq -C '.' "$1" | fmt -w "$width" | less -R
+}
+
 jqm ()
 {
     jq -C '.' "$@" | more
+}
+
+wcl ()
+{
+    wc -l *
+}
+
+key2json() {
+  local file="$1"
+  local key="$2"
+
+  if [ -z "$file" ] || [ -z "$key" ]; then
+    echo "Usage: read_json_value <file> <key>"
+    return 1
+  fi
+
+  if [ ! -f "$file" ]; then
+    echo "File not found: $file"
+    return 1
+  fi
+
+  cat "$file" | jq ".$key | fromjson" -C | less -R
 }
 
 # Forward port $2 on compute-$1 to localhost
