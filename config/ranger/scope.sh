@@ -51,27 +51,41 @@ SQLITE_TABLE_LIMIT=20  # Display only the top <limit> tables in database, set to
 SQLITE_ROW_LIMIT=5     # Display only the first and the last (<limit> - 1) records in each table, set to 0 for no limits.
 
 drop_bigsize() {
-    # Input size limit in MB as the first argument to the function
     local size_limit_mb=$1
-    # Convert size limit from MB to kilobytes (KB) since `du` outputs in KB by default
-    # 1 MB = 1024 KB
     local size_limit_kb=$((size_limit_mb * 1024))
 
-    # Check if the FILE_PATH environment variable is set
     if [[ -z "${FILE_PATH}" ]]; then
         echo "FILE_PATH is not set."
         exit 1
     fi
 
-    # Get file size in KB using `du` and cut to extract the size
     local file_size_kb=$(du "${FILE_PATH}" | cut -f1)
+    local file_extension="${FILE_PATH##*.}"
+    file_extension="${file_extension,,}"  # Convert to lowercase
 
-    # Compare file size with the size limit
     if [[ ${file_size_kb} -gt ${size_limit_kb} ]]; then
-        echo '----- FILE TOO BIG -----'
-        exit 0
+        echo '----- FILE TOO BIG, PREVIEWING FIRST PART -----'
+        # Adjust these as needed
+        local head_lines=100
+        local head_bytes=5000
+
+        # Custom handling for JSON and JSONL files
+        if [[ "${file_extension}" == "json" || "${file_extension}" == "jsonl" ]]; then
+            # For JSON, attempt to pretty-print the first few lines/bytes
+            head -n ${head_lines} -c "${FILE_PATH}" | jq --color-output . 2>/dev/null || head -c ${head_bytes} "${FILE_PATH}" | jq --color-output . 2>/dev/null
+            if [ $? -ne 0 ]; then
+                # Fallback if jq fails (e.g., not properly formatted for jq)
+                echo "Preview with jq failed, displaying raw file head instead:"
+                head -n ${head_lines} "${FILE_PATH}"
+            fi
+        else
+            # Default action for non-JSON files
+            head -n ${head_lines} "${FILE_PATH}"
+        fi
+        exit 5  # Use a fixed-size preview
     fi
 }
+
 
 handle_extension() {
     case "${FILE_EXTENSION_LOWER}" in
@@ -500,4 +514,4 @@ handle_extension
 handle_mime "${MIMETYPE}"
 handle_fallback
 
-exit 1
+exit 2
