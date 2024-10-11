@@ -168,3 +168,8 @@ eljacompute()
 {
     ssh -t -t elja ssh compute-$1
 }
+
+lns()
+{
+    ln -s "$1" .
+}

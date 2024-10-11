@@ -65,3 +65,7 @@ alias tsvsplit='sed G | tr '\''\t'\'' '\''\n'\'''
 alias trnslview='sed G | tr '\''\t'\'' '\''\n'\'' | fmt -t -w $((160 < $(tput cols) ? 160 : $(tput cols) ))  | less +-R '
 
 alias tf='tail -f'
+
+alias cdrel='cd $(realpath .)'
+
+alias plf='pip list | fzf'
