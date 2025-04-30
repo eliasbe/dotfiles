@@ -173,3 +173,30 @@ lns()
 {
     ln -s "$1" .
 }
+
+lnss()
+{
+    lns $(d | fzf | awk '{print $2}')
+}
+
+cancels() {
+  local jobinfo jobid
+
+  # Get the full job line from squeue based on fzf selection
+  jobinfo=$(squeue | fzf --header="Select a job to cancel" --no-preview)
+
+  # Extract the job ID (first column)
+  jobid=$(echo "$jobinfo" | awk '{print $1}')
+
+  if [[ -n $jobid && $jobid =~ ^[0-9]+$ ]]; then
+    echo "Are you sure you want to cancel the following job?"
+    echo "$jobinfo"
+    echo "Press Enter to cancel, or Ctrl+C to abort."
+    read -r
+
+    scancel "$jobid"
+    echo "Job $jobid canceled."
+  else
+    echo "No valid job selected."
+  fi
+}
