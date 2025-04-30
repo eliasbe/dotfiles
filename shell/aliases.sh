@@ -6,7 +6,7 @@ alias af="alias | fzf"
 #alias la='ls -lha'
 #alias l='ls'
 # alias ls="exa"
-alias l="exa -l --git"
+alias l="eza -l --git"
 alias la="l -a"
 alias ll="l --sort=oldest"
 alias lll="l --sort=newest"
@@ -17,10 +17,10 @@ alias laa="la --sort=oldest"
 alias laaa="la --sort=newest"
 alias las="la --reverse --sort=size"
 alias lass="la --sort=size"
-alias tre="exa --tree"
-alias tree="exa --tree --level=2"
-alias treee="exa --tree --level=3"
-alias treeee="exa --tree --level=4"
+alias tre="eza --tree"
+alias tree="eza --tree --level=2"
+alias treee="eza --tree --level=3"
+alias treeee="eza --tree --level=4"
 
 alias duu="du --max-depth=1 ."
 
