@@ -113,3 +113,6 @@
 [submodule "fzf"]
 	path = fzf
 	url = https://github.com/junegunn/fzf.git
+[submodule "vim/pack/vendor/start/vim-surround.git"]
+	path = vim/pack/vendor/start/vim-surround.git
+	url = git@github.com:tpope/vim-surround.git
