@@ -31,6 +31,7 @@ eval "$(fasd --init auto)"
 source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 
 path_prepend ~/bin
+path_append ~/.local/bin
 
 # Use vi keybindings
 bindkey -v
@@ -81,11 +82,21 @@ if [ -f ~/.zshrc_local_after ]; then
 fi
 
 # Environment variables
-if [ -f ~/.env_variables ]; then
-    source ~/.env_variables
-fi
+# if [ -f ~/.env_variables ]; then
+#     source ~/.env_variables
+# fi
 
 promptinit
+if [[ -n "$SLURM_JOB_ID" ]]; then
+    prompt spaceship
+fi
 
 # Startup profiling
 # zprof
+
+# autoload -Uz compinit
+zstyle ':completion:*' menu select
+fpath+=~/.zfunc
+
+
+fpath+=~/.zfunc; autoload -Uz compinit; compinit
