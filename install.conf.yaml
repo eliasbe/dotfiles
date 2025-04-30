@@ -7,7 +7,9 @@
 
 - link:
     ~/.dotfiles: ''
-    ~/.bashrc: shell/bashrc
+    ~/.bashrc:
+      path: shell/bashrc
+      force: true
     ~/.condarc: shell/condarc
     ~/.config/broot: config/broot
     ~/.config/kitty: config/kitty
