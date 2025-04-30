@@ -128,12 +128,35 @@ alg() {
     file="$(fasd -Rfl "$1" | fzf -1 -0 --no-sort +m)" && vim "${file}" || return 1
 }
 
-# fasd & fzf change directory - jump using `fasd` if given argument, filter output of `fasd` using `fzf` else
 unalias z
+# fasd & fzf change directory - jump using `fasd` if given argument, filter output of `fasd` using `fzf` else
 z() {
-    [ $# -gt 0 ] && fasd_cd -d "$*" && return
-    local dir
-    dir="$(fasd -Rdl "$1" | fzf --preview "tree -C {} | head -50" -1 -0 --no-sort +m)" && cd "${dir}" || return 1
+  [ $# -gt 0 ] && fasd_cd -d "$*" && return
+  local dir
+  dir="$(fasd -Rdl "$1" | fzf \
+    --preview 'tree -C {} | head -100' \
+    --preview-window='right:60%' \
+    --bind='ctrl-s:toggle-preview' \
+    --header='CTRL-S: toggle preview' \
+    --border \
+    -1 -0 --no-sort +m)" && cd "${dir}" || return 1
+}
+unalias f
+# Find and open a frequently accessed file with preview
+f() {
+  if [ $# -gt 0 ]; then
+    fasd -f "$@"  # Original behavior with arguments
+    return
+  fi
+  # Existing fzf enhanced behavior for interactive use
+  local file
+  file="$(fasd -Rfl "$1" | fzf \
+    --preview 'bat --color=always --line-range :100 {}' \
+    --preview-window='right:60%' \
+    --bind='ctrl-s:toggle-preview' \
+    --header='CTRL-S: toggle preview' \
+    --border \
+    -1 -0 --no-sort +m)" && ${EDITOR} "${file}" || return 1
 }
 
 
