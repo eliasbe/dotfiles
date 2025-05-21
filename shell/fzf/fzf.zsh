@@ -3,6 +3,9 @@
 if [[ ! "$PATH" == *$HOME/bin* ]]; then
   path_append "$HOME/bin"
 fi
+if [[ ! "$PATH" == *$HOME/.dotfiles/fzf/bin* ]]; then
+  path_append "$HOME/.dotfiles/fzf/bin"
+fi
 
 # TODO: does this belong here?
 source $HOME/.dotfiles/shell/plugins/zsh-interactive-cd/zsh-interactive-cd.plugin.zsh
