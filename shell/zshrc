@@ -25,22 +25,12 @@ eval "$(fasd --init auto)"
 # export PATH=/Users/k/bin:$PATH
 source ~/.shell/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-
-
-eval "$(fasd --init auto)"
-source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
-
 path_prepend ~/bin
 path_append ~/.local/bin
-
-# Use vi keybindings
-bindkey -v
 
 setopt HIST_IGNORE_SPACE
 
 export TERM=xterm-256color
-
-
 
 # KANNSKI FÆRA Í SÉR SKRÁR
 
