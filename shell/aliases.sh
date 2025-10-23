@@ -69,3 +69,8 @@ alias tf='tail -f'
 alias cdrel='cd $(realpath .)'
 
 alias plf='pip list | fzf'
+
+alias swa='switchaudiosource -s "$(switchaudiosource -a | fzf)"'
+
+alias sv='source .venv/bin/activate'
+alias da='deactivate'
