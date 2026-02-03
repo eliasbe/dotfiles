@@ -12,7 +12,9 @@ INITIAL_QUERY="${*:-}"
     --color "hl:-1:underline,hl+:-1:underline:reverse" \
     --prompt '1. ripgrep> ' \
     --delimiter : \
-    --header '╱ CTRL-R (ripgrep mode) ╱ CTRL-F (fzf mode) ╱' \
+    --header '╱ CTRL-R (ripgrep mode) ╱ CTRL-F (fzf mode) ╱ ENTER (vim) ╱ CTRL-T (jq+less)' \
     --preview 'bat --color=always {1} --highlight-line {2}' \
     --preview-window 'up,60%,border-bottom,+{2}+3/3,~3' \
-    --bind "enter:execute(vim {1} +{2})+reload($RG_PREFIX {q} || true)"
+    --bind "enter:execute(vim {1} +{2})+reload($RG_PREFIX {q} || true)" \
+    --bind 'ctrl-t:execute(jq -C '.' {1} | less -R +/{q})'
+
