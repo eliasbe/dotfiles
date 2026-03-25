@@ -121,7 +121,10 @@ alias oo=ranger-cd
 
 jql ()
 {
-    jq -C '.' "$@" | less -R
+    local file="$1"
+    local escaped_file="${file//./\\.}"
+    shift
+    jq -C '.' "$file" "$@" | less -R -P "File\\: $escaped_file"
 }
 
 jqfl ()
