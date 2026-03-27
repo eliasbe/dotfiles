@@ -203,3 +203,17 @@ cancels() {
     echo "No valid job selected."
   fi
 }
+
+get_secret() {
+  security find-generic-password -a "$USER" -s "$1" -w  2>/dev/null
+}
+
+with_secret() {
+  local var_name="$1" secret_name="$2"
+  shift 2
+  env "$var_name=$(get_secret "$secret_name")" "$@"
+}
+
+add_api_key(){
+  security add-generic-password -a "$USER" -s "$1" -w "$2"
+}
