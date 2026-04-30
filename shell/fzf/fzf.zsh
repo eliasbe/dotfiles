@@ -51,9 +51,12 @@ _fzf_git_fzf() {
     --border-label-pos=2 \
     --color='header:italic:underline,label:blue' \
     --preview-window='right,50%,border-left' \
+    --disabled \
+    --bind='j:down,k:up,g:first,G:last' \
+    --bind='/:enable-search,<:disable-search' \
     --bind='ctrl-s:change-preview-window(down,50%,border-top|hidden|)' \
     --bind='ctrl-i:execute(echo {} | awk "{print \$2}" | xargs -I % git add % &)' "$@" \
-    --header='CTRL-O (open in browser) ╱ ALT-E (open in editor) ╱ CTRL-S (change preview) ╱ (SHIFT) TAB (select) ╱ CTRL-I (git add)'
+    --header='CTRL-O (open in browser) ╱ ALT-E (open in editor) ╱ CTRL-S (change preview) ╱ (SHIFT) TAB (select) ╱ CTRL-I (git add) ╱ / (search)'
 }
 
 # Use fd command for listing path candidates.
@@ -165,12 +168,24 @@ f() {
 
 ### Git
 # fshow - git commit browser
-ggrs ()
+ggrs()
+{
+  git log --all --graph --decorate --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"  | \
+   fzf --ansi --no-sort --reverse --tiebreak=index --disabled --preview \
+   'f() { set -- $(echo -- "$@" | grep -o "[a-f0-9]\{7\}"); [ $# -eq 0 ] || git show --color=always $1 ; }; f {}' \
+   --bind "j:down,k:up,ctrl-f:page-down,ctrl-b:page-up,J:preview-down,K:preview-up,ctrl-d:preview-page-down,ctrl-u:preview-page-up,g:first,G:last,q:abort,ctrl-m:execute:
+                (grep -o '[a-f0-9]\{7\}' | head -1 |
+                xargs -I % sh -c 'git show --color=always % | less -R') << 'FZF-EOF'
+                {}
+FZF-EOF" --preview-window=right:60%
+}
+
+ggrss()
 {
   git log --all --graph --decorate --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"  | \
    fzf --ansi --no-sort --reverse --tiebreak=index --preview \
    'f() { set -- $(echo -- "$@" | grep -o "[a-f0-9]\{7\}"); [ $# -eq 0 ] || git show --color=always $1 ; }; f {}' \
-   --bind "j:down,k:up,alt-j:preview-down,alt-k:preview-up,ctrl-d:preview-page-down,ctrl-u:preview-page-up,q:abort,ctrl-m:execute:
+   --bind "alt-j:preview-down,alt-k:preview-up,ctrl-d:preview-page-down,ctrl-u:preview-page-up,q:abort,ctrl-m:execute:
                 (grep -o '[a-f0-9]\{7\}' | head -1 |
                 xargs -I % sh -c 'git show --color=always % | less -R') << 'FZF-EOF'
                 {}
