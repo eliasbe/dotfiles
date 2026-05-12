@@ -74,3 +74,5 @@ alias swa='switchaudiosource -s "$(switchaudiosource -a | fzf)"'
 
 alias sv='source .venv/bin/activate'
 alias da='deactivate'
+
+alias api='with_secrets_file ~/.api_keys'
