@@ -205,7 +205,7 @@ cancels() {
 }
 
 get_secret() {
-  security find-generic-password -a "$USER" -s "$1" -w  2>/dev/null
+  security find-generic-password -a "$USER" -s "$1" -w 
 }
 
 add_api_key(){
@@ -233,6 +233,44 @@ with_secrets_file() {
       secret_name="$line"
     fi
     value=$(get_secret "$secret_name")
+    if [ -z "$value" ]; then
+      echo "Missing secret: $secret_name" >&2
+      return 1
+    fi
+    env_args+=("$env_name=$value")
+  done < "$file"
+  env "${env_args[@]}" "$@"
+}
+
+pass_get_secret() {
+  pass show "$1" 2>/dev/null
+}
+
+pass_add_api_key() {
+  printf '%s\n' "$2" | pass insert --echo --force "$1"
+}
+
+pass_with_secret() {
+  local var_name="$1" secret_name="$2"
+  shift 2
+  env "$var_name=$(pass_get_secret "$secret_name")" "$@"
+}
+
+pass_with_secrets_file() {
+  local file="$1"
+  shift
+  local env_args=()
+  local env_name secret_name value
+  while IFS= read -r line; do
+    [[ -z "$line" || "$line" == \#* ]] && continue
+    if [[ "$line" == *=* ]]; then
+      env_name="${line%%=*}"
+      secret_name="${line#*=}"
+    else
+      env_name="$line"
+      secret_name="$line"
+    fi
+    value=$(pass_get_secret "$secret_name")
     if [ -z "$value" ]; then
       echo "Missing secret: $secret_name" >&2
       return 1
