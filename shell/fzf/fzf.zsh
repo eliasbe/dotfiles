@@ -172,6 +172,18 @@ ggrs()
 {
   git log --all --graph --decorate --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"  | \
    fzf --ansi --no-sort --reverse --tiebreak=index --disabled --preview \
+   'f() { set -- $(echo -- "$@" | grep -o "[a-f0-9]\{7\}"); [ $# -eq 0 ] || git show --stat --color=always $1 ; }; f {}' \
+   --bind "j:down,k:up,ctrl-f:page-down,ctrl-b:page-up,J:preview-down,K:preview-up,ctrl-d:preview-page-down,ctrl-u:preview-page-up,g:first,G:last,q:abort,ctrl-m:execute:
+                (grep -o '[a-f0-9]\{7\}' | head -1 |
+                xargs -I % sh -c 'git show --color=always % | less -R') << 'FZF-EOF'
+                {}
+FZF-EOF" --preview-window=right:60%
+}
+
+ggrsg()
+{
+  git log --all --graph --decorate --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"  | \
+   fzf --ansi --no-sort --reverse --tiebreak=index --disabled --preview \
    'f() { set -- $(echo -- "$@" | grep -o "[a-f0-9]\{7\}"); [ $# -eq 0 ] || git show --color=always $1 ; }; f {}' \
    --bind "j:down,k:up,ctrl-f:page-down,ctrl-b:page-up,J:preview-down,K:preview-up,ctrl-d:preview-page-down,ctrl-u:preview-page-up,g:first,G:last,q:abort,ctrl-m:execute:
                 (grep -o '[a-f0-9]\{7\}' | head -1 |
@@ -186,6 +198,18 @@ ggrss()
    fzf --ansi --no-sort --reverse --tiebreak=index --preview \
    'f() { set -- $(echo -- "$@" | grep -o "[a-f0-9]\{7\}"); [ $# -eq 0 ] || git show --color=always $1 ; }; f {}' \
    --bind "alt-j:preview-down,alt-k:preview-up,ctrl-d:preview-page-down,ctrl-u:preview-page-up,q:abort,ctrl-m:execute:
+                (grep -o '[a-f0-9]\{7\}' | head -1 |
+                xargs -I % sh -c 'git show --color=always % | less -R') << 'FZF-EOF'
+                {}
+FZF-EOF" --preview-window=right:60%
+}
+
+# gfzf - browse piped git log output, e.g. git log --oneline main..HEAD | gfzf
+gfzf()
+{
+  fzf --ansi --no-sort --reverse --tiebreak=index --preview \
+   'f() { set -- $(echo -- "$@" | grep -o "[a-f0-9]\{7\}"); [ $# -eq 0 ] || git show --color=always $1 ; }; f {}' \
+   --bind "j:down,k:up,ctrl-f:page-down,ctrl-b:page-up,J:preview-down,K:preview-up,ctrl-d:preview-page-down,ctrl-u:preview-page-up,g:first,G:last,q:abort,ctrl-m:execute:
                 (grep -o '[a-f0-9]\{7\}' | head -1 |
                 xargs -I % sh -c 'git show --color=always % | less -R') << 'FZF-EOF'
                 {}
